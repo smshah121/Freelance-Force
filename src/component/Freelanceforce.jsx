@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "/logo.png";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
   ArrowUpRight,
   Sparkles,
+  X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const FreelanceForce = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const items = [
     "Web Development",
     "Graphic Design",
@@ -105,10 +108,59 @@ const FreelanceForce = () => {
 
       </div>
 
-      {/* MOBILE MENU */}
-      <button className="md:hidden text-white">
+      {/* MOBILE MENU BUTTON */}
+      <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(true)}>
         <Menu size={30} />
       </button>
+
+      {/* MOBILE MENU OVERLAY */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-8"
+          >
+            <button 
+              className="absolute top-6 right-6 text-white p-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <X size={35} />
+            </button>
+            
+            <a
+              href="#service"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="uppercase text-2xl tracking-[0.18em] text-white hover:text-[#C8221A] transition cursor-pointer"
+            >
+              Services
+            </a>
+            <Link
+              to="/about"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="uppercase text-2xl tracking-[0.18em] text-white hover:text-[#C8221A] transition"
+            >
+              About
+            </Link>
+            <a 
+              href="#join"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="uppercase text-2xl tracking-[0.18em] text-white hover:text-[#C8221A] transition"
+            >
+              Join
+            </a>
+            
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="border border-white/20 bg-white/10 hover:bg-white hover:text-[#C8221A] transition-all duration-300 px-10 py-4 rounded-full uppercase text-xl font-semibold tracking-wide mt-4"
+            >
+              Hire Us
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   </nav>
