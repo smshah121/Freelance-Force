@@ -55,7 +55,7 @@ const FreelanceForce = () => {
         <img
           src={logo}
           alt="logo"
-          className="h-[55px] sm:h-[65px] invert"
+          className="h-[55px] sm:h-[65px] brightness-0 invert"
         />
       </motion.div>
 
@@ -541,7 +541,7 @@ const FreelanceForce = () => {
           <img
             src={logo}
             alt="logo"
-            className="h-12 invert"
+            className="h-12 brightness-0 invert"
           />
 
           <div className="flex flex-wrap justify-center gap-6 uppercase text-sm tracking-wide text-gray-500">
