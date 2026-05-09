@@ -88,19 +88,19 @@ const leadership = [
   {
     role: "Presidents",
     desc: "Leading strategy, operations, and vision execution of Freelance Force.",
-    members: ["Syed Danish Khurram", "Elhaam Ali", "Moiz Ali Khan"],
+    members: ["Syed Danish Khurram (President)", "Elhaam Ali (Ex-President)", "Moiz Ali Khan (Ex-Vice President)"],
     icon: "◈",
   },
   {
     role: "Patron",
     desc: "Guiding with mentorship, academic experience, and institutional support.",
-    members: ["Asif Ali"],
+    members: ["Asif Ali (Patron)"],
     icon: "✦",
   },
   {
     role: "Core Team",
     desc: "Developers, designers, and managers delivering real-world project work.",
-    members: ["Dev Team", "Design Team", "Marketing Team"],
+    members: ["Hassan Mansoor","Syed Momin Ali Shah", "Muhammad Farasat", "Syed Saad Akber", "Ausaf Ahmed"],
     icon: "◱",
   },
 ];
