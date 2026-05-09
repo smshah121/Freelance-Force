@@ -357,7 +357,7 @@ const FreelanceForce = () => {
         {/* BUTTON */}
         <div className="relative z-10 mt-12">
 
-          <button
+          {/* <button
             className="group flex items-center gap-3
             uppercase tracking-wide
             text-white/80 hover:text-white
@@ -369,7 +369,7 @@ const FreelanceForce = () => {
               size={18}
               className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
             />
-          </button>
+          </button> */}
 
         </div>
 
@@ -416,7 +416,7 @@ const FreelanceForce = () => {
         {/* BUTTON */}
         <div className="relative z-10 mt-12">
 
-          <button
+          {/* <button
             className="group flex items-center gap-3
             uppercase tracking-wide
             text-white/80 hover:text-white
@@ -428,7 +428,7 @@ const FreelanceForce = () => {
               size={18}
               className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
             />
-          </button>
+          </button> */}
 
         </div>
 
