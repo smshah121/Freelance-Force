@@ -187,7 +187,7 @@ const About = () => {
               Est. Early 2025 · Karachi · Student Creative Collective
             </motion.p>
 
-            <motion.h1 variants={fadeUp} className="font-['Bebas_Neue'] text-[14vw] md:text-[11vw] leading-[0.85] mb-12">
+            <motion.h1 variants={fadeUp} className="font-['Bebas_Neue'] text-9xl md:text-9xl leading-[0.85] mb-12">
               OUR<br /><span className="text-[#C8221A]">STORY.</span>
             </motion.h1>
 
