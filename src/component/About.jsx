@@ -669,9 +669,9 @@ const About = () => {
       {/* ════════════════════════════════════════════
           CH 6 — LEADERSHIP
       ════════════════════════════════════════════ */}
-      <section id="leadership" className="min-h-screen bg-[#0c0c0c] py-24 px-8 md:px-20 relative overflow-hidden">
+        <section id="leadership" className="bg-[#0c0c0c] py-24 px-8 md:px-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[3px] h-full bg-[#C8221A]" />
-
+ 
         <div className="max-w-[1300px] mx-auto relative z-10">
           <Reveal>
             <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 05</p>
@@ -679,7 +679,183 @@ const About = () => {
               LEADER-<br />SHIP.
             </h2>
           </Reveal>
+ 
+          {/* ── PATRON — intro left / photo right ── */}
+          <Reveal delay={0.05}>
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-6">Faculty Patron</p>
+          </Reveal>
+ 
+          <div className="grid md:grid-cols-2 gap-px bg-white/[0.04] mb-px">
+            {/* Left — intro */}
+            <Reveal variants={fadeLeft} delay={0.1}>
+              <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[460px]">
+                <div>
+                  <p className="text-[#C8221A] text-[9px] uppercase tracking-[0.3em] mb-5">Patron · Faculty Mentor</p>
+                  <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-5">
+                    ASIF ALI
+                  </h3>
+                  <p className="text-white/35 text-sm mb-6">Designation · Department Name</p>
+                  <p className="text-white/55 text-sm leading-relaxed">
+                    A brief introduction to the patron — their background, academic expertise,
+                    and what they bring to Freelance Force as a mentor and guiding figure
+                    for the society's vision and operations.
+                  </p>
+                </div>
+                <div className="mt-10">
+                  <div className="w-12 h-[1px] bg-[#C8221A]/40 mb-5" />
+                  <div className="flex gap-8">
+                    <div>
+                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Role</p>
+                      <p className="text-white/55 text-sm">Faculty Patron</p>
+                    </div>
+                    <div>
+                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Since</p>
+                      <p className="text-white/55 text-sm">Early 2025</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+ 
+            {/* Right — photo */}
+            <Reveal variants={fadeRight} delay={0.15}>
+              <div className="bg-zinc-900 relative overflow-hidden min-h-[460px] flex items-end">
+                <img
+                  src="/patron-photo.jpg"
+                  alt="Faculty Patron"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
+                  onError={(e) => { e.target.style.display = "none"; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
+                {/* Fallback */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="text-center">
+                    <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
+                      <span className="font-['Bebas_Neue'] text-2xl text-white/15">FP</span>
+                    </div>
+                    <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
+                  </div>
+                </div>
+                {/* Name strip */}
+                <div className="relative z-10 p-8 w-full">
+                  <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">Asif Ali</p>
+                  <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">Patron · Freelance Force</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+ 
+          {/* ── PRESIDENTS — photo left / intro right for P1, flipped for P2 ── */}
+          <Reveal delay={0.05}>
+            <div className="flex items-center gap-5 mt-px mb-px">
+              <div className="flex-1 h-[1px] bg-white/[0.04]" />
+              <p className="text-[9px] uppercase tracking-[0.3em] text-white/15 px-4">Presidents</p>
+              <div className="flex-1 h-[1px] bg-white/[0.04]" />
+            </div>
+          </Reveal>
+ 
+          {[
+            
+            {
+              name: "Syed Danish Khurram",
+              role: "President · Freelance Force",
+              bio: "A brief intro for President 2 — their discipline, what they own day-to-day within the society, and their vision for where Freelance Force goes next.",
+              initials: "P2",
+              photoSrc: "/president2-photo.jpg",
+              photoLeft: true,
+            },
+          ].map((person, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.75 }}
+              className="grid md:grid-cols-2 gap-px bg-white/[0.04] mb-px"
+            >
+              {/* Photo — left on P2, right on P1 */}
+              {person.photoLeft && (
+                <div className="bg-zinc-900 relative overflow-hidden min-h-[420px] flex items-end order-first">
+                  <img
+                    src={person.photoSrc}
+                    alt={person.name}
+                    className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
+                    onError={(e) => { e.target.style.display = "none"; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
+                
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="text-center">
+                      <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
+                        <span className="font-['Bebas_Neue'] text-2xl text-white/15">{person.initials}</span>
+                      </div>
+                      <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
+                    </div>
+                  </div>
+                  <div className="relative z-10 p-8 w-full">
+                    <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">{person.name}</p>
+                    <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">President · Freelance Force</p>
+                  </div>
+                </div>
+              )}
+ 
+              {/* Intro */}
+              <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[420px]">
+                <div>
+                  <p className="text-[#C8221A] text-[9px] uppercase tracking-[0.3em] mb-5">President · Freelance Force</p>
+                  <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-4">
+                    {person.name}.
+                  </h3>
+                  <p className="text-white/30 text-sm mb-6">{person.role}</p>
+                  <p className="text-white/55 text-sm leading-relaxed">{person.bio}</p>
+                </div>
+                <div className="mt-10">
+                  <div className="w-12 h-[1px] bg-[#C8221A]/40 mb-5" />
+                  <div className="flex gap-8">
+                    <div>
+                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Title</p>
+                      <p className="text-white/55 text-sm">President</p>
+                    </div>
+                    <div>
+                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Focus</p>
+                      <p className="text-white/55 text-sm">{person.role}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+              {/* Photo — right on P1 */}
+              {!person.photoLeft && (
+                <div className="bg-zinc-900 relative overflow-hidden min-h-[420px] flex items-end">
+                  <img
+                    src={person.photoSrc}
+                    alt={person.name}
+                    className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
+                    onError={(e) => { e.target.style.display = "none"; }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
+                  <div className="absolute top-0 left-0 w-10 h-10 bg-[#C8221A] flex items-center justify-center">
+                    <span className="font-['Bebas_Neue'] text-xs text-white">0{i + 1}</span>
+                  </div>
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="text-center">
+                      <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
+                        <span className="font-['Bebas_Neue'] text-2xl text-white/15">{person.initials}</span>
+                      </div>
+                      <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
+                    </div>
+                  </div>
+                  <div className="relative z-10 p-8 w-full">
+                    <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">{person.name}</p>
+                    <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">President · Freelance Force</p>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          ))}
+          <div>
 
+         
           <div className="grid md:grid-cols-3 gap-px bg-white/[0.04] mb-6">
             {leadership.map((team, i) => (
               <motion.div
@@ -708,6 +884,7 @@ const About = () => {
               </motion.div>
             ))}
           </div>
+           </div>
 
           <Reveal delay={0.3}>
             <div className="bg-[#C8221A] p-10 flex flex-col md:flex-row items-center justify-between gap-6">
