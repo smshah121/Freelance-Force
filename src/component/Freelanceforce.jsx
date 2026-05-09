@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import logo from "/logo.png";
+import { FaLinkedin,FaInstagram,FaWhatsapp ,FaFacebook } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
@@ -220,7 +221,9 @@ const FreelanceForce = () => {
     <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-20">
 
       {/* PRIMARY BUTTON */}
-      <button className="group bg-white text-[#C8221A]
+      <button 
+      onClick={()=> window.location = "mailto:iufreelancesociety@gmail.com"}
+      className="group bg-white text-[#C8221A]
         px-6 py-3
         uppercase tracking-[0.2em]
         font-semibold text-sm sm:text-base
@@ -521,6 +524,7 @@ const FreelanceForce = () => {
     {/* BUTTON */}
     <div className="mt-16">
       <button
+      onClick={()=> window.location = "mailto:iufreelancesociety@gmail.com"}
         className="group bg-[#C8221A]
         hover:bg-[#d62b21]
         transition-all duration-300
@@ -596,19 +600,26 @@ const FreelanceForce = () => {
             className="h-12 brightness-0 invert"
           />
 
-          <div className="flex flex-wrap justify-center gap-6 uppercase text-sm tracking-wide text-gray-500">
+          <div className="flex flex-wrap justify-center gap-4 uppercase text-sm tracking-wide text-gray-500">
 
-            <span className="hover:text-white transition cursor-pointer">
-              Instagram
-            </span>
+             <Link to="https://www.instagram.com/freelancingsocietyiu" className="hover:text-white transition cursor-pointer">
+              <FaInstagram size={24}/>
+            </Link>
 
-            <span className="hover:text-white transition cursor-pointer">
-              LinkedIn
-            </span>
+            <Link to="https://www.linkedin.com/in/freelance-force-50a826390/" className="hover:text-white transition cursor-pointer">
+              <FaLinkedin size={24}/>
+            </Link>
 
-            <span className="hover:text-white transition cursor-pointer">
-              Contact
-            </span>
+            <Link to="https://www.facebook.com/share/1Fwpg5k7S4/?mibextid=wwXIfr" className="hover:text-white transition cursor-pointer">
+              <FaFacebook size={24} />
+            </Link>
+
+            <Link to="https://wa.me/923241458846" className="hover:text-white transition cursor-pointer">
+              <FaWhatsapp size={24}/>
+            </Link>
+
+             
+           
 
           </div>
 

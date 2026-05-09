@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 
 /* ── Animation variants ── */
@@ -108,6 +108,7 @@ const leadership = [
 /* ═══════════════════════════════════════════════════ */
 const About = () => {
   const [activeChapter, setActiveChapter] = useState("intro");
+  const navigate = useNavigate()
 
   useEffect(() => {
     const observers = chapters.map(({ id }) => {
@@ -130,7 +131,7 @@ const About = () => {
     <div className="font-['DM_Sans'] bg-black text-white overflow-x-hidden">
 
       {/* ══ FIXED NAV ══ */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md border-b border-white/[0.06]">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md border-b p-2 border-white/[0.06]">
         <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 text-white/40 hover:text-white transition-colors group">
             <span className="text-base group-hover:-translate-x-1 transition-transform inline-block">←</span>
@@ -158,12 +159,19 @@ const About = () => {
           </div>
 
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 bg-[#C8221A] flex items-center justify-center">
-              <span className="font-['Bebas_Neue'] text-sm text-white leading-none">FF</span>
-            </div>
-            <span className="font-['Bebas_Neue'] text-sm tracking-widest text-white/50 hidden sm:block">
-              FREELANCE FORCE
-            </span>
+           {/* LOGO */}
+                 <motion.div
+                   whileHover={{ scale: 1.05 }}
+                   className="cursor-pointer"
+                 >
+                   <img
+                     src="/logo.png"
+                     alt="logo"
+                     onClick={() => navigate("/")}
+                     className="h-[55px] md:h-[60px] brightness-0 invert"
+                   />
+                 </motion.div>
+           
           </div>
         </div>
       </nav>
@@ -383,11 +391,11 @@ const About = () => {
       {/* ════════════════════════════════════════════
           CH 4 — COLLABORATIONS (IU Spectrum)
       ════════════════════════════════════════════ */}
-      <section id="collaborations" className="min-h-screen bg-[#0c0c0c] relative overflow-hidden py-24 px-8 md:px-20">
+            <section id="collaborations" className="min-h-screen bg-[#0c0c0c] relative overflow-hidden py-24 px-8 md:px-20">
         <div className="absolute top-0 right-0 font-['Bebas_Neue'] text-[14vw] leading-none text-white/[0.025] pointer-events-none select-none pr-4 pt-4 whitespace-nowrap">
           COLLABS
         </div>
-
+ 
         <div className="max-w-[1300px] mx-auto relative z-10">
           <Reveal>
             <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 03</p>
@@ -395,7 +403,7 @@ const About = () => {
               COLLABO-<br />RATIONS.
             </h2>
           </Reveal>
-
+ 
           <Reveal delay={0.08}>
             <p className="text-white/45 text-lg leading-relaxed max-w-2xl mb-16">
               Alongside running our own bootcamps, Freelance Force steps beyond the classroom
@@ -403,16 +411,16 @@ const About = () => {
               tech, and creative communities under one roof.
             </p>
           </Reveal>
-
+ 
           {/* IU Spectrum — featured collab card */}
           <Reveal delay={0.12}>
             <div className="mb-6">
               <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-5">Featured Collaboration</p>
             </div>
           </Reveal>
-
+ 
           <div className="grid md:grid-cols-[1fr_1fr] gap-px bg-white/[0.04] mb-16">
-
+ 
             {/* Left — IU Spectrum identity */}
             <Reveal variants={fadeLeft} delay={0.15}>
               <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[420px] group hover:bg-[#101010] transition-colors">
@@ -426,25 +434,25 @@ const About = () => {
                       <p className="text-white/30 text-[10px] uppercase tracking-widest mt-0.5">All-Society Event · IU Karachi</p>
                     </div>
                   </div>
-
+ 
                   <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-6">
                     GAMING<br />WAR.
                   </h3>
-
+ 
                   <p className="text-white/45 text-sm leading-relaxed mb-6">
                     IU Spectrum is IU's flagship all-society event. Freelance Force
                     partnered with <span className="text-white/70">GDR Society</span> to
                     organise the Gaming War — a high-stakes Tekken 8 tournament on PS5
                     that drew participants from across Karachi into the university.
                   </p>
-
+ 
                   <p className="text-white/25 text-sm leading-relaxed">
                     The event put Freelance Force on the map as an organiser — not just
                     a service provider — and cemented our relationship with the broader
                     Karachi student community.
                   </p>
                 </div>
-
+ 
                 <div className="flex items-center gap-3 mt-10">
                   <span className="text-[9px] uppercase tracking-widest text-white/25 border border-white/[0.08] px-3 py-1.5">
                     w/ GDR Society
@@ -455,11 +463,11 @@ const About = () => {
                 </div>
               </div>
             </Reveal>
-
+ 
             {/* Right — event detail stats */}
             <Reveal variants={fadeRight} delay={0.2}>
               <div className="bg-[#0c0c0c] flex flex-col min-h-[420px]">
-
+ 
                 {/* Game highlight */}
                 <div className="bg-[#C8221A] p-10 flex-1 flex flex-col justify-between relative overflow-hidden">
                   <div className="font-['Bebas_Neue'] text-[14vw] md:text-[9vw] leading-none text-red-900/25 absolute -bottom-4 -right-4 pointer-events-none select-none">
@@ -481,7 +489,7 @@ const About = () => {
                     </div>
                   </div>
                 </div>
-
+ 
                 {/* Collab detail strip */}
                 <div className="border border-white/[0.06] border-t-0 p-8 grid grid-cols-2 gap-6">
                   <div>
@@ -498,133 +506,109 @@ const About = () => {
               </div>
             </Reveal>
           </div>
-
-          {/* Bridge into Skillverse */}
+ 
+          {/* ── Divider between the two collabs ── */}
           <Reveal delay={0.25}>
-            <div className="border border-white/[0.06] p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-white/[0.02]">
-              <div>
-                <p className="text-[9px] uppercase tracking-[0.25em] text-[#C8221A] mb-2">What's next</p>
-                <p className="font-['Bebas_Neue'] text-2xl text-white leading-none mb-1">
-                  Skillverse — June 2026
-                </p>
-                <p className="text-white/35 text-sm">
-                  Our biggest collaboration yet · AICIS · ACM · GDR · Gaming · Dev · Robotics · All of Karachi
-                </p>
-              </div>
-              <button
-                onClick={() => document.getElementById("skillverse")?.scrollIntoView({ behavior: "smooth" })}
-                className="text-[#C8221A] text-[10px] uppercase tracking-widest border border-[#C8221A]/30 px-6 py-3 hover:bg-[#C8221A] hover:text-white transition-colors flex-shrink-0"
-              >
-                See Skillverse →
-              </button>
+            <div className="flex items-center gap-5 my-16">
+              <div className="flex-1 h-[1px] bg-white/[0.06]" />
+              <span className="text-[9px] uppercase tracking-[0.3em] text-white/20">Coming Next · June 2026</span>
+              <div className="flex-1 h-[1px] bg-white/[0.06]" />
             </div>
           </Reveal>
-        </div>
-      </section>
-
-
-      {/* ════════════════════════════════════════════
-          CH 5 — SKILLVERSE
-      ════════════════════════════════════════════ */}
-      <section id="skillverse" className="min-h-screen bg-[#090909] relative overflow-hidden py-24 px-8 md:px-20">
-        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
-          <div className="font-['Bebas_Neue'] text-[20vw] leading-none text-white/[0.018] absolute -bottom-6 -left-6 whitespace-nowrap">
-            SKILLVERSE
-          </div>
-        </div>
-
-        <div className="max-w-[1300px] mx-auto relative z-10">
-          <Reveal>
-            <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 04 · June 2026</p>
-            <h2 className="font-['Bebas_Neue'] text-[11vw] md:text-[7.5vw] leading-[0.88] text-white mb-3">
-              SKILL-<br />VERSE.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.05}>
-            <div className="w-20 h-[1px] bg-[#C8221A] mb-12" />
-          </Reveal>
-
-          <div className="grid md:grid-cols-[1.15fr_1fr] gap-16 mb-0">
-
-            {/* Left col */}
-            <Reveal variants={fadeLeft} delay={0.1}>
-              <p className="text-white/55 text-xl leading-relaxed mb-6">
-                This June, Freelance Force co-organises{" "}
-                <span className="text-white font-semibold">Skillverse</span> — a city-wide
-                event open to students across Karachi, bringing together competitive gaming,
-                software development, and robotics under one roof.
-              </p>
-              <p className="text-white/30 leading-relaxed mb-12">
-                Partnering with AICIS, ACM, and GDR Society, Skillverse is built for
-                everyone — coders, gamers, builders, engineers. Four tracks. One venue.
-                Zero barriers.
-              </p>
-
-              {/* Partners grid */}
-              <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-5">Organising Partners</p>
-              <div className="grid grid-cols-2 gap-3">
-                {partners.map((p, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08 }}
-                    className="border border-white/[0.07] px-4 py-4 hover:border-[#C8221A]/40 transition-colors"
-                  >
-                    <p className="text-white font-semibold text-sm">{p.name}</p>
-                    <p className="text-white/25 text-[10px] mt-0.5 leading-snug">{p.full}</p>
-                  </motion.div>
-                ))}
+ 
+          {/* ── SKILLVERSE ── */}
+          <div id="skillverse">
+            <Reveal delay={0.1}>
+              <div className="flex flex-wrap items-end gap-4 mb-6">
+                <h3 className="font-['Bebas_Neue'] text-[9vw] md:text-[6vw] leading-[0.88] text-white">
+                  SKILLVERSE.
+                </h3>
+                <span className="mb-2 bg-[#C8221A] text-white text-[9px] uppercase tracking-widest px-3 py-1.5 font-semibold">
+                  June 2026 · Upcoming
+                </span>
               </div>
             </Reveal>
-
-            {/* Right col — tracks + date callout */}
-            <div>
-              <Reveal variants={fadeRight} delay={0.15}>
-                <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-5">Event Tracks</p>
-                <div className="space-y-3 mb-6">
-                  {skillverseActivities.map((a, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: 40 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1, duration: 0.6 }}
-                      className="flex gap-5 border border-white/[0.06] p-5 hover:border-[#C8221A]/30 hover:bg-white/[0.02] transition-all group"
-                    >
-                      <div className="w-1 self-stretch bg-white/[0.08] group-hover:bg-[#C8221A] transition-colors flex-shrink-0" />
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-1">
-                          <p className="text-white font-semibold text-sm">{a.name}</p>
-                          <span className="text-[8px] uppercase tracking-widest text-[#C8221A] border border-[#C8221A]/30 px-2 py-0.5">
-                            {a.type}
-                          </span>
-                        </div>
-                        <p className="text-white/30 text-xs">{a.desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
+ 
+            <Reveal delay={0.12}>
+              <p className="text-white/45 text-lg leading-relaxed max-w-2xl mb-14">
+                Our biggest collaboration yet — Freelance Force co-organises{" "}
+                <span className="text-white font-semibold">Skillverse</span> with AICIS, ACM,
+                and GDR Society. A city-wide event open to all students across Karachi,
+                bringing competitive gaming, development, and robotics under one roof.
+              </p>
+            </Reveal>
+ 
+            <div className="grid md:grid-cols-[1.15fr_1fr] gap-px bg-white/[0.04] mb-6">
+ 
+              {/* Left — partners */}
+              <Reveal variants={fadeLeft} delay={0.15}>
+                <div className="bg-[#0c0c0c] p-10 md:p-12">
+                  <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-6">Organising Partners</p>
+                  <div className="grid grid-cols-2 gap-3 mb-10">
+                    {partners.map((p, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.08 }}
+                        className="border border-white/[0.07] px-4 py-4 hover:border-[#C8221A]/40 transition-colors"
+                      >
+                        <p className="text-white font-semibold text-sm">{p.name}</p>
+                        <p className="text-white/25 text-[10px] mt-0.5 leading-snug">{p.full}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+ 
+                  {/* Date callout */}
+                  <div className="bg-[#C8221A] p-6 flex items-center justify-between">
+                    <div>
+                      <p className="text-white/50 text-[9px] uppercase tracking-widest mb-1">When</p>
+                      <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">June 2026 · Karachi</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-white/50 text-[9px] uppercase tracking-widest mb-1">Open to</p>
+                      <p className="text-white font-medium text-sm">All Students · City-wide</p>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
-
-              {/* Date callout */}
-              <Reveal variants={fadeRight} delay={0.35}>
-                <div className="bg-[#C8221A] p-6 flex items-center justify-between">
-                  <div>
-                    <p className="text-white/50 text-[9px] uppercase tracking-widest mb-1">When</p>
-                    <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">June 2026 · Karachi</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-white/50 text-[9px] uppercase tracking-widest mb-1">Open to</p>
-                    <p className="text-white font-medium text-sm">All Students · City-wide</p>
+ 
+              {/* Right — event tracks */}
+              <Reveal variants={fadeRight} delay={0.2}>
+                <div className="bg-[#0c0c0c] p-10 md:p-12">
+                  <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-6">Event Tracks</p>
+                  <div className="space-y-3">
+                    {skillverseActivities.map((a, i) => (
+                      <motion.div
+                        key={i}
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: i * 0.1, duration: 0.6 }}
+                        className="flex gap-5 border border-white/[0.06] p-5 hover:border-[#C8221A]/30 hover:bg-white/[0.02] transition-all group"
+                      >
+                        <div className="w-1 self-stretch bg-white/[0.08] group-hover:bg-[#C8221A] transition-colors flex-shrink-0" />
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-1">
+                            <p className="text-white font-semibold text-sm">{a.name}</p>
+                            <span className="text-[8px] uppercase tracking-widest text-[#C8221A] border border-[#C8221A]/30 px-2 py-0.5">
+                              {a.type}
+                            </span>
+                          </div>
+                          <p className="text-white/30 text-xs">{a.desc}</p>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
               </Reveal>
             </div>
           </div>
+ 
         </div>
       </section>
+
 
 
       {/* ════════════════════════════════════════════
@@ -639,7 +623,7 @@ const About = () => {
 
         <div className="max-w-[1300px] mx-auto w-full relative z-10">
           <Reveal>
-            <p className="uppercase text-white/35 tracking-[0.3em] text-[10px] mb-4">Chapter 05</p>
+            <p className="uppercase text-white/35 tracking-[0.3em] text-[10px] mb-4">Chapter 04</p>
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-20 items-end">
@@ -690,7 +674,7 @@ const About = () => {
 
         <div className="max-w-[1300px] mx-auto relative z-10">
           <Reveal>
-            <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 06</p>
+            <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 05</p>
             <h2 className="font-['Bebas_Neue'] text-[11vw] md:text-[7.5vw] leading-[0.88] text-white mb-20">
               LEADER-<br />SHIP.
             </h2>
@@ -751,10 +735,12 @@ const About = () => {
       <footer className="bg-black border-t border-white/[0.05] py-8 px-8">
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
-            <div className="w-6 h-6 bg-[#C8221A] flex items-center justify-center">
-              <span className="font-['Bebas_Neue'] text-xs text-white">FF</span>
-            </div>
-            <span className="font-['Bebas_Neue'] tracking-widest text-white/30 text-sm">FREELANCE FORCE</span>
+           <img
+                       src="/logo.png"
+                       alt="logo"
+                       className="h-12 brightness-0 invert"
+                     />
+           
           </div>
           <p className="text-white/15 text-[10px] uppercase tracking-widest">
             © {new Date().getFullYear()} · Est. Early 2025 · Karachi
