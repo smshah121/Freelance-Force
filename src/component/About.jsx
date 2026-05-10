@@ -788,7 +788,7 @@ const About = () => {
                     </div>
                     <div>
                       <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Since</p>
-                      <p className="text-white/55 text-sm">Early 2025</p>
+                      <p className="text-white/55 text-sm">June 2014</p>
                     </div>
                   </div>
                 </div>
