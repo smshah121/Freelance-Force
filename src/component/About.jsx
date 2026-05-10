@@ -40,39 +40,38 @@ function Reveal({ children, variants = fadeUp, className = "", delay = 0 }) {
 
 /* ── Chapter nav config ── */
 const chapters = [
-  { id: "intro",            label: "Our Story" },
-  { id: "beginning",        label: "The Beginning" },
-  { id: "lastmiletech",     label: "Last Mile Tech" },
-  { id: "collaborations",   label: "Collaborations" },
-  { id: "skillverse",       label: "Skillverse" },
-  { id: "vision",           label: "Our Vision" },
-  { id: "leadership",       label: "Leadership" },
+  { id: "intro",          label: "Our Story" },
+  { id: "beginning",      label: "The Beginning" },
+  { id: "lastmiletech",   label: "Last Mile Tech" },
+  { id: "collaborations", label: "Collaborations" },
+  { id: "vision",         label: "Our Vision" },
+  { id: "leadership",     label: "Leadership" },
 ];
 
 /* ── Real timeline data ── */
 const timeline = [
-  { when: "Early 2025",  milestone: "Society Founded",          detail: "Freelance Force born at IU, Karachi" },
-  { when: "Spring 2025", milestone: "Last Mile Tech — Batch 1", detail: "Full Stack · Testing & Automation · AI" },
-    { when: "Summer 2025", milestone: "Last Mile Tech — Batch 2", detail: "DevOps added · expanded enrollment" },
-  { when: "2025",        milestone: "IU Spectrum — Gaming War", detail: "Tekken 8 · PS5 · w/ GDR Society · city-wide" },
-  { when: "Summer 2026", milestone: "Last Mile Tech — Batch 3", detail: "Coming soon · applications opening" },
-  { when: "June 2026",   milestone: "Skillverse",               detail: "City-wide event w/ AICIS · ACM · GDR" },
+  { when: "Early 2025",  milestone: "Society Founded",           detail: "Freelance Force born at IU, Karachi" },
+  { when: "Spring 2025", milestone: "Last Mile Tech — Batch 1",  detail: "Full Stack · Testing & Automation · AI" },
+  { when: "Summer 2025", milestone: "Last Mile Tech — Batch 2",  detail: "DevOps added · expanded enrollment" },
+  { when: "2025",        milestone: "IU Spectrum — Gaming War",  detail: "Tekken 8 · PS5 · w/ GDR Society · city-wide" },
+  { when: "Summer 2026", milestone: "Last Mile Tech — Batch 3",  detail: "Coming soon · applications opening" },
+  { when: "June 2026",   milestone: "Skillverse",                detail: "City-wide event w/ AICIS · ACM · GDR" },
 ];
 
 /* ── Last Mile Tech courses ── */
 const courses = [
-  { name: "Full Stack",            desc: "End-to-end web development from frontend to backend APIs and databases.", icon: "⌨" },
-  { name: "Testing & Automation",  desc: "QA fundamentals, automated test pipelines, and CI integration.",          icon: "◎" },
-  { name: "DevOps",                desc: "Containers, cloud deployments, pipelines, and infrastructure as code.",   icon: "⬡" },
-  { name: "AI",                    desc: "Practical AI integrations, model usage, and building intelligent apps.",  icon: "◈" },
+  { name: "Full Stack",           desc: "End-to-end web development from frontend to backend APIs and databases.", icon: "⌨" },
+  { name: "Testing & Automation", desc: "QA fundamentals, automated test pipelines, and CI integration.",          icon: "◎" },
+  { name: "DevOps",               desc: "Containers, cloud deployments, pipelines, and infrastructure as code.",   icon: "⬡" },
+  { name: "AI",                   desc: "Practical AI integrations, model usage, and building intelligent apps.",  icon: "◈" },
 ];
 
 /* ── Skillverse activities ── */
 const skillverseActivities = [
-  { name: "CS2",           type: "Gaming",       desc: "Competitive Counter-Strike 2 tournament open to all." },
-  { name: "PUBG",          type: "Gaming",       desc: "Squad battles — team up and compete across Karachi." },
-  { name: "Dev Hackathon", type: "Development",  desc: "Build real solutions under pressure. 24 hours. Ship it." },
-  { name: "Robotics",      type: "Engineering",  desc: "Hands-on robotics challenges for builders and tinkerers." },
+  { name: "CS2",           type: "Gaming",      desc: "Competitive Counter-Strike 2 tournament open to all." },
+  { name: "PUBG",          type: "Gaming",      desc: "Squad battles — team up and compete across Karachi." },
+  { name: "Dev Hackathon", type: "Development", desc: "Build real solutions under pressure. 24 hours. Ship it." },
+  { name: "Robotics",      type: "Engineering", desc: "Hands-on robotics challenges for builders and tinkerers." },
 ];
 
 /* ── Skillverse partners ── */
@@ -83,24 +82,24 @@ const partners = [
   { name: "Freelance Force", full: "Lead Organiser" },
 ];
 
-/* ── Leadership ── */
+/* ── Leadership 3-card grid data ── */
 const leadership = [
   {
     role: "Presidents",
     desc: "Leading strategy, operations, and vision execution of Freelance Force.",
-    members: ["Syed Danish Khurram (President)", "Elhaam Ali (Ex-President)", "Moiz Ali Khan (Ex-Vice President)"],
+    members: ["Syed Danish Khurram (President)","Hassan Mansoor (Vice President)", "Elhaam Ali (Ex-President)", "Moiz Ali Khan (Ex-Vice President)"],
     icon: "◈",
   },
   {
     role: "Patron",
     desc: "Guiding with mentorship, academic experience, and institutional support.",
-    members: ["Asif Ali (Patron)"],
+    members: ["Asif Ali Shahmiri"],
     icon: "✦",
   },
   {
     role: "Core Team",
     desc: "Developers, designers, and managers delivering real-world project work.",
-    members: ["Hassan Mansoor","Syed Momin Ali Shah", "Muhammad Farasat", "Syed Saad Akber", "Ausaf Ahmed"],
+    members: ["Syed Momin Ali Shah", "Muhammad Farasat", "Syed Saad Akber", "Ausaf Ahmed"],
     icon: "◱",
   },
 ];
@@ -108,7 +107,7 @@ const leadership = [
 /* ═══════════════════════════════════════════════════ */
 const About = () => {
   const [activeChapter, setActiveChapter] = useState("intro");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observers = chapters.map(({ id }) => {
@@ -133,11 +132,13 @@ const About = () => {
       {/* ══ FIXED NAV ══ */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md border-b p-2 border-white/[0.06]">
         <div className="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+
           <Link to="/" className="flex items-center gap-3 text-white/40 hover:text-white transition-colors group">
             <span className="text-base group-hover:-translate-x-1 transition-transform inline-block">←</span>
             <span className="uppercase text-[10px] tracking-[0.22em]">Home</span>
           </Link>
 
+          {/* Chapter dots */}
           <div className="hidden md:flex items-center gap-2">
             {chapters.map(({ id, label }) => (
               <button
@@ -158,21 +159,15 @@ const About = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-2.5">
-           {/* LOGO */}
-                 <motion.div
-                   whileHover={{ scale: 1.05 }}
-                   className="cursor-pointer"
-                 >
-                   <img
-                     src="/logo.png"
-                     alt="logo"
-                     onClick={() => navigate("/")}
-                     className="h-[55px] md:h-[60px] brightness-0 invert"
-                   />
-                 </motion.div>
-           
-          </div>
+          {/* Logo */}
+          <motion.div whileHover={{ scale: 1.05 }} className="cursor-pointer">
+            <img
+              src="/logo.png"
+              alt="logo"
+              onClick={() => navigate("/")}
+              className="h-[55px] md:h-[60px] brightness-0 invert"
+            />
+          </motion.div>
         </div>
       </nav>
 
@@ -191,7 +186,11 @@ const About = () => {
 
         <div className="relative z-10 max-w-[1300px] mx-auto w-full">
           <motion.div initial="hidden" animate="show" variants={stagger}>
-           
+
+            <motion.p variants={fadeUp} className="uppercase text-[#C8221A] tracking-[0.35em] text-[10px] mb-8">
+              Est. Early 2025 · Karachi · Student Creative Collective
+            </motion.p>
+
             <motion.h1 variants={fadeUp} className="font-['Bebas_Neue'] text-8xl md:text-9xl leading-[0.85] mb-12">
               OUR<br /><span className="text-[#C8221A]">STORY.</span>
             </motion.h1>
@@ -221,6 +220,7 @@ const About = () => {
             </motion.div>
           </motion.div>
 
+          {/* Scroll cue */}
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
             className="mt-16 flex items-center gap-4"
@@ -389,13 +389,13 @@ const About = () => {
 
 
       {/* ════════════════════════════════════════════
-          CH 4 — COLLABORATIONS (IU Spectrum)
+          CH 4 — COLLABORATIONS + SKILLVERSE
       ════════════════════════════════════════════ */}
-            <section id="collaborations" className="min-h-screen bg-[#0c0c0c] relative overflow-hidden py-24 px-8 md:px-20">
+      <section id="collaborations" className="min-h-screen bg-[#0c0c0c] relative overflow-hidden py-24 px-8 md:px-20">
         <div className="absolute top-0 right-0 font-['Bebas_Neue'] text-[14vw] leading-none text-white/[0.025] pointer-events-none select-none pr-4 pt-4 whitespace-nowrap">
           COLLABS
         </div>
- 
+
         <div className="max-w-[1300px] mx-auto relative z-10">
           <Reveal>
             <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 03</p>
@@ -403,7 +403,7 @@ const About = () => {
               COLLABO-<br />RATIONS.
             </h2>
           </Reveal>
- 
+
           <Reveal delay={0.08}>
             <p className="text-white/45 text-lg leading-relaxed max-w-2xl mb-16">
               Alongside running our own bootcamps, Freelance Force steps beyond the classroom
@@ -411,17 +411,15 @@ const About = () => {
               tech, and creative communities under one roof.
             </p>
           </Reveal>
- 
-          {/* IU Spectrum — featured collab card */}
+
+          {/* ── IU Spectrum ── */}
           <Reveal delay={0.12}>
-            <div className="mb-6">
-              <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-5">Featured Collaboration</p>
-            </div>
+            <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-5">Featured Collaboration</p>
           </Reveal>
- 
+
           <div className="grid md:grid-cols-[1fr_1fr] gap-px bg-white/[0.04] mb-16">
- 
-            {/* Left — IU Spectrum identity */}
+
+            {/* Left — IU Spectrum story */}
             <Reveal variants={fadeLeft} delay={0.15}>
               <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[420px] group hover:bg-[#101010] transition-colors">
                 <div>
@@ -434,25 +432,25 @@ const About = () => {
                       <p className="text-white/30 text-[10px] uppercase tracking-widest mt-0.5">All-Society Event · IU Karachi</p>
                     </div>
                   </div>
- 
+
                   <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-6">
                     GAMING<br />WAR.
                   </h3>
- 
+
                   <p className="text-white/45 text-sm leading-relaxed mb-6">
                     IU Spectrum is IU's flagship all-society event. Freelance Force
                     partnered with <span className="text-white/70">GDR Society</span> to
                     organise the Gaming War — a high-stakes Tekken 8 tournament on PS5
                     that drew participants from across Karachi into the university.
                   </p>
- 
+
                   <p className="text-white/25 text-sm leading-relaxed">
                     The event put Freelance Force on the map as an organiser — not just
                     a service provider — and cemented our relationship with the broader
                     Karachi student community.
                   </p>
                 </div>
- 
+
                 <div className="flex items-center gap-3 mt-10">
                   <span className="text-[9px] uppercase tracking-widest text-white/25 border border-white/[0.08] px-3 py-1.5">
                     w/ GDR Society
@@ -463,12 +461,10 @@ const About = () => {
                 </div>
               </div>
             </Reveal>
- 
-            {/* Right — event detail stats */}
+
+            {/* Right — Tekken 8 stats */}
             <Reveal variants={fadeRight} delay={0.2}>
               <div className="bg-[#0c0c0c] flex flex-col min-h-[420px]">
- 
-                {/* Game highlight */}
                 <div className="bg-[#C8221A] p-10 flex-1 flex flex-col justify-between relative overflow-hidden">
                   <div className="font-['Bebas_Neue'] text-[14vw] md:text-[9vw] leading-none text-red-900/25 absolute -bottom-4 -right-4 pointer-events-none select-none">
                     T8
@@ -489,8 +485,6 @@ const About = () => {
                     </div>
                   </div>
                 </div>
- 
-                {/* Collab detail strip */}
                 <div className="border border-white/[0.06] border-t-0 p-8 grid grid-cols-2 gap-6">
                   <div>
                     <p className="text-[9px] uppercase tracking-[0.2em] text-white/20 mb-1">Organised with</p>
@@ -506,8 +500,8 @@ const About = () => {
               </div>
             </Reveal>
           </div>
- 
-          {/* ── Divider between the two collabs ── */}
+
+          {/* ── Divider ── */}
           <Reveal delay={0.25}>
             <div className="flex items-center gap-5 my-16">
               <div className="flex-1 h-[1px] bg-white/[0.06]" />
@@ -515,8 +509,8 @@ const About = () => {
               <div className="flex-1 h-[1px] bg-white/[0.06]" />
             </div>
           </Reveal>
- 
-          {/* ── SKILLVERSE ── */}
+
+          {/* ── SKILLVERSE (inside Collaborations) ── */}
           <div id="skillverse">
             <Reveal delay={0.1}>
               <div className="flex flex-wrap items-end gap-4 mb-6">
@@ -528,7 +522,7 @@ const About = () => {
                 </span>
               </div>
             </Reveal>
- 
+
             <Reveal delay={0.12}>
               <p className="text-white/45 text-lg leading-relaxed max-w-2xl mb-14">
                 Our biggest collaboration yet — Freelance Force co-organises{" "}
@@ -537,10 +531,10 @@ const About = () => {
                 bringing competitive gaming, development, and robotics under one roof.
               </p>
             </Reveal>
- 
+
             <div className="grid md:grid-cols-[1.15fr_1fr] gap-px bg-white/[0.04] mb-6">
- 
-              {/* Left — partners */}
+
+              {/* Left — partners + date */}
               <Reveal variants={fadeLeft} delay={0.15}>
                 <div className="bg-[#0c0c0c] p-10 md:p-12">
                   <p className="text-[9px] uppercase tracking-[0.3em] text-white/25 mb-6">Organising Partners</p>
@@ -559,8 +553,6 @@ const About = () => {
                       </motion.div>
                     ))}
                   </div>
- 
-                  {/* Date callout */}
                   <div className="bg-[#C8221A] p-6 flex items-center justify-between">
                     <div>
                       <p className="text-white/50 text-[9px] uppercase tracking-widest mb-1">When</p>
@@ -573,7 +565,7 @@ const About = () => {
                   </div>
                 </div>
               </Reveal>
- 
+
               {/* Right — event tracks */}
               <Reveal variants={fadeRight} delay={0.2}>
                 <div className="bg-[#0c0c0c] p-10 md:p-12">
@@ -605,14 +597,13 @@ const About = () => {
               </Reveal>
             </div>
           </div>
- 
+
         </div>
       </section>
 
 
-
       {/* ════════════════════════════════════════════
-          CH 5 — OUR VISION
+          CH 4 — OUR VISION
       ════════════════════════════════════════════ */}
       <section id="vision" className="min-h-screen bg-[#C8221A] relative overflow-hidden flex flex-col justify-center py-24 px-8 md:px-20">
         <div className="absolute inset-0 pointer-events-none select-none overflow-hidden">
@@ -667,11 +658,11 @@ const About = () => {
 
 
       {/* ════════════════════════════════════════════
-          CH 6 — LEADERSHIP
+          CH 5 — LEADERSHIP
       ════════════════════════════════════════════ */}
-        <section id="leadership" className="bg-[#0c0c0c] py-24 px-8 md:px-20 relative overflow-hidden">
+      <section id="leadership" className="bg-[#0c0c0c] py-24 px-8 md:px-20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-[3px] h-full bg-[#C8221A]" />
- 
+
         <div className="max-w-[1300px] mx-auto relative z-10">
           <Reveal>
             <p className="uppercase text-[#C8221A] tracking-[0.3em] text-[10px] mb-3">Chapter 05</p>
@@ -679,34 +670,125 @@ const About = () => {
               LEADER-<br />SHIP.
             </h2>
           </Reveal>
- 
-          {/* ── PATRON — intro left / photo right ── */}
+
+          {/* ── PATRON ── */}
           <Reveal delay={0.05}>
             <p className="text-[9px] uppercase tracking-[0.3em] text-white/20 mb-6">Faculty Patron</p>
           </Reveal>
- 
+
           <div className="grid md:grid-cols-2 gap-px bg-white/[0.04] mb-px">
-            {/* Left — intro */}
-            <Reveal variants={fadeLeft} delay={0.1}>
-              <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[460px]">
-                <div>
-                  <p className="text-[#C8221A] text-[9px] uppercase tracking-[0.3em] mb-5">Patron · Faculty Mentor</p>
-                  <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-5">
-                    ASIF ALI
-                  </h3>
-                  <p className="text-white/35 text-sm mb-6">Designation · Department Name</p>
-                  <p className="text-white/55 text-sm leading-relaxed">
-                    A brief introduction to the patron — their background, academic expertise,
-                    and what they bring to Freelance Force as a mentor and guiding figure
-                    for the society's vision and operations.
+
+          {/* Right — photo */}
+            <Reveal variants={fadeLeft} delay={0.15}>
+              <div className="bg-zinc-900 relative overflow-hidden min-h-[700px] flex items-end">
+                <img
+                  src="/patron-photo.jpg"
+                  alt="Asif Ali"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
+                  onError={(e) => { e.target.style.display = "none"; }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="text-center">
+                    <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
+                      <span className="font-['Bebas_Neue'] text-2xl text-white/15">AA</span>
+                    </div>
+                    <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
+                  </div>
+                </div>
+                <div className="relative z-10 p-8 w-full">
+                  <div className="flex gap-2 mb-4 flex-wrap">
+                    {["BizKidz Academy", "Touch Star Institute", "Iqra University"].map((v) => (
+                      <span
+                        key={v}
+                        className="text-[9px] uppercase tracking-widest text-white/50 bg-black/40 backdrop-blur-sm border border-white/[0.08] px-3 py-1.5"
+                      >
+                        {v}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="font-['Bebas_Neue'] text-4xl text-white leading-none">Asif Ali</p>
+                  <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">
+                    Patron · Freelance Force
                   </p>
                 </div>
+              </div>
+            </Reveal>
+
+
+            {/* Left — intro */}
+            <Reveal variants={fadeRight} delay={0.1}>
+              <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[700px]">
+                <div>
+                  <p className="text-[#C8221A] text-[9px] uppercase tracking-[0.3em] mb-5">
+                    Patron · Faculty Mentor
+                  </p>
+                  <h3 className="font-['Bebas_Neue'] uppercase text-5xl md:text-6xl text-white leading-[0.88] mb-4">
+                    Asif Ali.
+                  </h3>
+                  <p className="text-white/35 text-xs uppercase tracking-widest mb-8">
+                    Software Engineer · Data Scientist · Educator · Entrepreneur
+                  </p>
+
+                  <p className="text-white/55 text-sm leading-relaxed mb-4">
+                    A passionate technology leader, educator, and entrepreneur with extensive
+                    experience in software engineering, artificial intelligence, web development,
+                    and data science.
+                  </p>
+                  <p className="text-white/40 text-sm leading-relaxed mb-4">
+                    Currently serving at <span className="text-white/65">Iqra University</span> as
+                    a Lecturer, he teaches programming, guides research projects, and mentors
+                    future software engineers in Java, Python, and C#.
+                  </p>
+                  <p className="text-white/40 text-sm leading-relaxed mb-8">
+                    Founder of <span className="text-white/65">BizKidz Academy</span> and{" "}
+                    <span className="text-white/65">Touch Star Institute</span> — empowering students
+                    and young entrepreneurs with modern technical and entrepreneurial skills.
+                  </p>
+
+                  <div className="mb-8">
+                    <p className="text-[9px] uppercase tracking-[0.25em] text-white/20 mb-3">Expertise</p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Software Engineering",
+                        "AI & Data Science",
+                        "Web Development",
+                        "Entrepreneurship",
+                        "Research & Mentorship",
+                        "Technology Management",
+                      ].map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[9px] uppercase tracking-widest text-white/40 border border-white/[0.08] px-3 py-1.5 hover:border-[#C8221A]/40 hover:text-white/60 transition-colors"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="border-l-2 border-[#C8221A] pl-5">
+                    <p className="text-[9px] uppercase tracking-[0.2em] text-[#C8221A]/70 mb-2">
+                      Vision for Freelance Force
+                    </p>
+                    <p className="text-white/60 text-sm leading-relaxed italic">
+                      "To empower students with digital skills, innovation, and freelancing
+                      opportunities that help them grow professionally and create impact in
+                      the modern tech world."
+                    </p>
+                  </div>
+                </div>
+
                 <div className="mt-10">
                   <div className="w-12 h-[1px] bg-[#C8221A]/40 mb-5" />
-                  <div className="flex gap-8">
+                  <div className="flex gap-8 flex-wrap">
                     <div>
                       <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Role</p>
                       <p className="text-white/55 text-sm">Faculty Patron</p>
+                    </div>
+                    <div>
+                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Institution</p>
+                      <p className="text-white/55 text-sm">Iqra University</p>
                     </div>
                     <div>
                       <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Since</p>
@@ -716,147 +798,148 @@ const About = () => {
                 </div>
               </div>
             </Reveal>
- 
-            {/* Right — photo */}
-            <Reveal variants={fadeRight} delay={0.15}>
-              <div className="bg-zinc-900 relative overflow-hidden min-h-[460px] flex items-end">
-                <img
-                  src="/patron-photo.jpg"
-                  alt="Faculty Patron"
-                  className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
-                  onError={(e) => { e.target.style.display = "none"; }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
-                {/* Fallback */}
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
-                      <span className="font-['Bebas_Neue'] text-2xl text-white/15">FP</span>
-                    </div>
-                    <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
-                  </div>
-                </div>
-                {/* Name strip */}
-                <div className="relative z-10 p-8 w-full">
-                  <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">Asif Ali</p>
-                  <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">Patron · Freelance Force</p>
-                </div>
-              </div>
-            </Reveal>
+
+            
           </div>
- 
-          {/* ── PRESIDENTS — photo left / intro right for P1, flipped for P2 ── */}
+
+          {/* ── PRESIDENT ── */}
           <Reveal delay={0.05}>
             <div className="flex items-center gap-5 mt-px mb-px">
               <div className="flex-1 h-[1px] bg-white/[0.04]" />
-              <p className="text-[9px] uppercase tracking-[0.3em] text-white/15 px-4">Presidents</p>
+              <p className="text-[9px] uppercase tracking-[0.3em] text-white/15 px-4">President</p>
               <div className="flex-1 h-[1px] bg-white/[0.04]" />
             </div>
           </Reveal>
- 
-          {[
-            
-            {
-              name: "Syed Danish Khurram",
-              role: "President · Freelance Force",
-              bio: "A brief intro for President 2 — their discipline, what they own day-to-day within the society, and their vision for where Freelance Force goes next.",
-              initials: "P2",
-              photoSrc: "/president2-photo.jpg",
-              photoLeft: true,
-            },
-          ].map((person, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1, duration: 0.75 }}
-              className="grid md:grid-cols-2 gap-px bg-white/[0.04] mb-px"
-            >
-              {/* Photo — left on P2, right on P1 */}
-              {person.photoLeft && (
-                <div className="bg-zinc-900 relative overflow-hidden min-h-[420px] flex items-end order-first">
-                  <img
-                    src={person.photoSrc}
-                    alt={person.name}
-                    className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
-                    onError={(e) => { e.target.style.display = "none"; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
-                
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="text-center">
-                      <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
-                        <span className="font-['Bebas_Neue'] text-2xl text-white/15">{person.initials}</span>
-                      </div>
-                      <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10 p-8 w-full">
-                    <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">{person.name}</p>
-                    <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">President · Freelance Force</p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1, duration: 0.75 }}
+            className="grid md:grid-cols-2 gap-px bg-white/[0.04] mb-px"
+          >
+            {/* Left — intro */}
+            <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[700px]">
+              <div>
+                <p className="text-[#C8221A] text-[9px] uppercase tracking-[0.3em] mb-5">
+                  President · Freelance Force
+                </p>
+                <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-4">
+                  Syed Danish<br />Khurram.
+                </h3>
+                <p className="text-white/35 text-xs uppercase tracking-widest mb-8">
+                  AI Enthusiast · Software Engineer · Entrepreneur · Student Leader
+                </p>
+
+                <p className="text-white/55 text-sm leading-relaxed mb-4">
+                  A passionate student leader, innovator, and aspiring software engineer
+                  dedicated to empowering youth through freelancing, technology, and digital
+                  skills. As President of Freelance Force at Iqra University, he leads
+                  impactful initiatives helping students explore opportunities in freelancing,
+                  entrepreneurship, and professional development.
+                </p>
+                <p className="text-white/40 text-sm leading-relaxed mb-4">
+                  He is the <span className="text-white/65">Founder & CEO of CAPRA Software House</span> — an
+                  AI-driven technology company focused on transforming industries through intelligent
+                  automation solutions, software innovation, and modern business technologies.
+                </p>
+                <p className="text-white/40 text-sm leading-relaxed mb-8">
+                  Currently pursuing <span className="text-white/65">Software Engineering at Iqra University</span>,
+                  combining technical expertise in AI, Data Science, and Software Development
+                  with a passion for leadership and innovation.
+                </p>
+
+                <div className="mb-8">
+                  <p className="text-[9px] uppercase tracking-[0.25em] text-white/20 mb-3">Expertise</p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "AI & Automation",
+                      "Software Development",
+                      "Leadership & Teams",
+                      "Event Management",
+                      "Entrepreneurship",
+                      "Data Science",
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="text-[9px] uppercase tracking-widest text-white/40 border border-white/[0.08] px-3 py-1.5 hover:border-[#C8221A]/40 hover:text-white/60 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              )}
- 
-              {/* Intro */}
-              <div className="bg-[#0c0c0c] p-10 md:p-14 flex flex-col justify-between min-h-[420px]">
-                <div>
-                  <p className="text-[#C8221A] text-[9px] uppercase tracking-[0.3em] mb-5">President · Freelance Force</p>
-                  <h3 className="font-['Bebas_Neue'] text-5xl md:text-6xl text-white leading-[0.88] mb-4">
-                    {person.name}.
-                  </h3>
-                  <p className="text-white/30 text-sm mb-6">{person.role}</p>
-                  <p className="text-white/55 text-sm leading-relaxed">{person.bio}</p>
+
+                <div className="border-l-2 border-[#C8221A] pl-5">
+                  <p className="text-[9px] uppercase tracking-[0.2em] text-[#C8221A]/70 mb-2">
+                    Vision for Freelance Force
+                  </p>
+                  <p className="text-white/60 text-sm leading-relaxed italic">
+                    "To create a platform where students can discover their potential, build
+                    digital careers, and become financially independent through skills,
+                    innovation, and freelancing."
+                  </p>
                 </div>
-                <div className="mt-10">
-                  <div className="w-12 h-[1px] bg-[#C8221A]/40 mb-5" />
-                  <div className="flex gap-8">
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Title</p>
-                      <p className="text-white/55 text-sm">President</p>
-                    </div>
-                    <div>
-                      <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Focus</p>
-                      <p className="text-white/55 text-sm">{person.role}</p>
-                    </div>
+              </div>
+
+              <div className="mt-10">
+                <div className="w-12 h-[1px] bg-[#C8221A]/40 mb-5" />
+                <div className="flex gap-8 flex-wrap">
+                  <div>
+                    <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Title</p>
+                    <p className="text-white/55 text-sm">President</p>
+                  </div>
+                  <div>
+                    <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Venture</p>
+                    <p className="text-white/55 text-sm">CAPRA Software House</p>
+                  </div>
+                  <div>
+                    <p className="text-[9px] uppercase tracking-widest text-white/20 mb-1">Institution</p>
+                    <p className="text-white/55 text-sm">Iqra University</p>
                   </div>
                 </div>
               </div>
- 
-              {/* Photo — right on P1 */}
-              {!person.photoLeft && (
-                <div className="bg-zinc-900 relative overflow-hidden min-h-[420px] flex items-end">
-                  <img
-                    src={person.photoSrc}
-                    alt={person.name}
-                    className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
-                    onError={(e) => { e.target.style.display = "none"; }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
-                  <div className="absolute top-0 left-0 w-10 h-10 bg-[#C8221A] flex items-center justify-center">
-                    <span className="font-['Bebas_Neue'] text-xs text-white">0{i + 1}</span>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <div className="text-center">
-                      <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
-                        <span className="font-['Bebas_Neue'] text-2xl text-white/15">{person.initials}</span>
-                      </div>
-                      <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
-                    </div>
-                  </div>
-                  <div className="relative z-10 p-8 w-full">
-                    <p className="font-['Bebas_Neue'] text-3xl text-white leading-none">{person.name}</p>
-                    <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">President · Freelance Force</p>
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          ))}
-          <div>
+            </div>
 
-         
-          <div className="grid md:grid-cols-3 gap-px bg-white/[0.04] mb-6">
+            {/* Right — photo */}
+            <div className="bg-zinc-900 relative overflow-hidden min-h-[700px] flex items-end">
+              <img
+                src="/president-photo.jpg"
+                alt="Syed Danish Khurram"
+                className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
+                onError={(e) => { e.target.style.display = "none"; }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
+              
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="text-center">
+                  <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
+                    <span className="font-['Bebas_Neue'] text-2xl text-white/15">SDK</span>
+                  </div>
+                  <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
+                </div>
+              </div>
+              <div className="relative z-10 p-8 w-full">
+                <div className="flex gap-2 mb-4 flex-wrap">
+                  {["CAPRA Software House", "Iqra University"].map((v) => (
+                    <span
+                      key={v}
+                      className="text-[9px] uppercase tracking-widest text-white/50 bg-black/40 backdrop-blur-sm border border-white/[0.08] px-3 py-1.5"
+                    >
+                      {v}
+                    </span>
+                  ))}
+                </div>
+                <p className="font-['Bebas_Neue'] text-4xl text-white leading-none">Syed Danish Khurram</p>
+                <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">
+                  President · Freelance Force
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* ── 3-card grid ── */}
+          <div className="mt-16 grid md:grid-cols-3 gap-px bg-white/[0.04] mb-6">
             {leadership.map((team, i) => (
               <motion.div
                 key={i}
@@ -884,8 +967,8 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-           </div>
 
+          {/* ── CTA ── */}
           <Reveal delay={0.3}>
             <div className="bg-[#C8221A] p-10 flex flex-col md:flex-row items-center justify-between gap-6">
               <div>
@@ -911,14 +994,7 @@ const About = () => {
       {/* ── FOOTER ── */}
       <footer className="bg-black border-t border-white/[0.05] py-8 px-8">
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-3">
-           <img
-                       src="/logo.png"
-                       alt="logo"
-                       className="h-12 brightness-0 invert"
-                     />
-           
-          </div>
+          <img src="/logo.png" alt="logo" className="h-12 brightness-0 invert" />
           <p className="text-white/15 text-[10px] uppercase tracking-widest">
             © {new Date().getFullYear()} · Est. Early 2025 · Karachi
           </p>
