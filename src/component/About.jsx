@@ -206,7 +206,7 @@ const About = () => {
                 {[
                   { val: "2",    lbl: "Bootcamps Completed" },
                   { val: "4",    lbl: "Courses Offered" },
-                  { val: "3+",   lbl: "Societies Collaborated" },
+                   { val: "∞", lbl: "Student Impact" },
                   { val: "2025", lbl: "Year Founded" },
                 ].map(({ val, lbl }) => (
                   <div key={lbl} className="bg-black px-6 py-7 text-center">
