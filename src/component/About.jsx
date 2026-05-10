@@ -187,9 +187,7 @@ const About = () => {
         <div className="relative z-10 max-w-[1300px] mx-auto w-full">
           <motion.div initial="hidden" animate="show" variants={stagger}>
 
-            <motion.p variants={fadeUp} className="uppercase text-[#C8221A] tracking-[0.35em] text-[10px] mb-8">
-              Est. Early 2025 · Karachi · Student Creative Collective
-            </motion.p>
+           
 
             <motion.h1 variants={fadeUp} className="font-['Bebas_Neue'] text-8xl md:text-9xl leading-[0.85] mb-12">
               OUR<br /><span className="text-[#C8221A]">STORY.</span>
