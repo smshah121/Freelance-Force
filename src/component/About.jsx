@@ -195,11 +195,9 @@ const About = () => {
 
             <motion.div variants={fadeUp} className="grid md:grid-cols-[1fr_1px_1fr] gap-10 items-start">
               <p className="text-white/50 text-lg leading-relaxed">
-                Freelance Force launched in early 2025 inside a university classroom in Karachi.
-                A group of developers, designers, and builders who chose to{" "}
-                <span className="text-white/80">do real work</span> instead of just study theory.
-                In under a year, we ran two full bootcamp cycles, hosted city-wide events,
-                and built a reputation for shipping — not presenting.
+                  <p className="text-white/50 text-lg leading-relaxed">
+                Freelance Force was launched in early 2025 inside a university classroom in Karachi by a group of developers, designers, and builders who chose to focus on real-world execution instead of just academic theory. Founded with a vision to empower students through freelancing and digital skills, the society independently organized its initial bootcamp at Iqra University, emphasizing practical learning and hands-on experience. In under a year, we expanded into two full bootcamp cycles, hosted city-wide events, and built a reputation for shipping real outcomes rather than just presentations.
+              </p>
               </p>
               <div className="hidden md:block w-[1px] bg-white/[0.07] self-stretch" />
               <div className="grid grid-cols-2 gap-px bg-white/[0.05] border border-white/[0.05]">
