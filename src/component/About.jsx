@@ -1033,10 +1033,8 @@ const About = () => {
                       </span>
                     ))}
                   </div>
-                  <p className="font-['Bebas_Neue'] text-4xl text-white leading-none">Asif Ali</p>
-                  <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">
-                    Patron · Freelance Force
-                  </p>
+        
+                  
                 </div>
               </div>
             </Reveal>
@@ -1249,10 +1247,8 @@ const About = () => {
                     </span>
                   ))}
                 </div>
-                <p className="font-['Bebas_Neue'] text-4xl text-white leading-none">Syed Danish Khurram</p>
-                <p className="text-white/35 text-[10px] uppercase tracking-widest mt-1">
-                  President · Freelance Force
-                </p>
+            
+                
               </div>
             </div>
           </motion.div>
