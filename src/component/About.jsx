@@ -1009,7 +1009,7 @@ const About = () => {
             <Reveal variants={fadeLeft} delay={0.15}>
               <div className="bg-zinc-900 relative overflow-hidden min-h-[700px] flex items-end">
                 <img
-                  src="/patron-photo.jpg"
+                  src="/asif_ali.jpg"
                   alt="Asif Ali"
                   className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
                   onError={(e) => { e.target.style.display = "none"; }}
