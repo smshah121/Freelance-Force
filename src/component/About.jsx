@@ -1021,14 +1021,7 @@ const About = () => {
                   onError={(e) => { e.target.style.display = "none"; }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
-                      <span className="font-['Bebas_Neue'] text-2xl text-white/15">AA</span>
-                    </div>
-                    <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
-                  </div>
-                </div>
+                
                 <div className="relative z-10 p-8 w-full">
                   <div className="flex gap-2 mb-4 flex-wrap">
                     {["BizKidz Academy", "Touch Star Institute", "Iqra University"].map((v) => (
@@ -1237,21 +1230,14 @@ const About = () => {
             {/* Right — photo */}
             <div className="bg-zinc-900 relative overflow-hidden min-h-[700px] flex items-end">
               <img
-                src="/president-photo.jpg"
+                src="/image.png"
                 alt="Syed Danish Khurram"
                 className="absolute inset-0 w-full h-full object-cover object-top opacity-60 grayscale"
                 onError={(e) => { e.target.style.display = "none"; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/20 to-transparent" />
               
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="text-center">
-                  <div className="w-20 h-20 rounded-full bg-white/[0.04] border border-white/[0.07] flex items-center justify-center mx-auto mb-3">
-                    <span className="font-['Bebas_Neue'] text-2xl text-white/15">SDK</span>
-                  </div>
-                  <p className="text-white/10 text-[9px] uppercase tracking-widest">Photo coming soon</p>
-                </div>
-              </div>
+              
               <div className="relative z-10 p-8 w-full">
                 <div className="flex gap-2 mb-4 flex-wrap">
                   {["CAPRA Software House", "Iqra University"].map((v) => (
