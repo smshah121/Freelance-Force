@@ -473,13 +473,19 @@ const About = () => {
         </p>
       </Reveal>
 
-      <div className="relative z-10">
-        <Reveal variants={fadeLeft} delay={0.1}>
-          <h2 className="font-['Bebas_Neue'] text-[13vw] md:text-[8vw] leading-[0.85] text-white">
-            THE<br />BEGIN-<br />NING.
-          </h2>
-        </Reveal>
-      </div>
+      <h2 className="font-['Bebas_Neue'] text-[15vw] md:text-[8vw] leading-[0.85] text-white">
+  
+  {/* Mobile */}
+  <span className="block md:hidden">
+    THE BEGINNING.
+  </span>
+
+  {/* Desktop */}
+  <span className="hidden md:block">
+    THE<br />BEGIN-<br />NING.
+  </span>
+
+</h2>
 
       {/* huge number */}
       <div className="font-['Bebas_Neue'] text-[25vw] md:text-[16vw] leading-none text-red-900/25 absolute -bottom-6 -right-4 pointer-events-none select-none">
