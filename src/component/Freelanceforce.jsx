@@ -173,22 +173,7 @@ const FreelanceForce = () => {
 
   <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 w-full">
 
-    {/* TAG */}
-    {/* <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      animate={{ opacity: 1, y: 0 }}
-      className="inline-flex items-center gap-3
-      border border-white/20
-      px-4 py-2
-      bg-white/10 backdrop-blur-xl"
-    >
-      <Sparkles size={14} />
-
-      <span className="uppercase text-[10px] sm:text-xs tracking-[0.2em] text-white/80">
-        Industry Level Student Studio
-      </span>
-    </motion.div> */}
-
+  
     {/* TITLE */}
     <motion.h1
       initial={{ opacity: 0, y: 60 }}
@@ -249,18 +234,30 @@ const FreelanceForce = () => {
 
 </button>
 
-      {/* SECONDARY BUTTON */}
-      {/* <button className="border border-white/30
-        text-white
-        px-6 py-3
-        uppercase tracking-[0.2em]
-        font-semibold text-sm sm:text-base
-        rounded-none
-        hover:bg-white/10 transition">
+{/* SECONDARY BUTTON */}
+        <Link
+  to="/about"
+  className="group relative overflow-hidden
+  border border-white/30
+  bg-transparent
+  px-7 py-4 sm:px-9
+  uppercase tracking-[0.25em]
+  font-semibold text-sm
+  flex items-center justify-center text-white"
+>
 
-        Explore Portfolio
+  {/* RIGHT → LEFT WHITE FILL */}
+  <span className="absolute inset-0 bg-white
+  scale-x-0 group-hover:scale-x-100
+  origin-right transition-transform duration-300"></span>
 
-      </button> */}
+  {/* TEXT */}
+  <span className="relative z-10 group-hover:text-[#C8221A] transition-colors duration-300">
+    Explore Us
+  </span>
+
+</Link>
+   
 
     </div>
 
@@ -468,10 +465,13 @@ AI solutions powered by Machine Learning and Data Science — including predicti
             <h3 className="font-['Bebas_Neue'] text-6xl sm:text-7xl text-white leading-[0.9] mt-8">
               GRAPHIC <br /> DESIGN
             </h3>
+            <div className="mt-10 border-l-2 border-[#C8221A] pl-5">
 
+            
             <p className="text-white/50 mt-6 italic">
               “Design that doesn’t just look good — it communicates.”
             </p>
+            </div>
           </div>
 
           <div>
