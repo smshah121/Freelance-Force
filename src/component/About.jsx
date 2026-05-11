@@ -975,12 +975,34 @@ const About = () => {
                   Applications open every semester · No experience required · Just drive
                 </p>
               </div>
-              <Link
-                to="/"
-                className="bg-white text-[#C8221A] px-10 py-4 uppercase tracking-widest text-xs font-bold hover:bg-white/90 transition-colors flex-shrink-0"
-              >
-                Join Now →
-              </Link>
+              <a
+  href="https://chat.whatsapp.com/Ly36sMDsE5934DLkQkUhDT"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group relative overflow-hidden inline-flex
+  items-center justify-center
+  px-10 py-4
+  uppercase tracking-widest
+  text-xs font-bold
+  border border-white
+  flex-shrink-0"
+>
+
+  {/* default background */}
+  <span className="absolute inset-0 bg-white"></span>
+
+  {/* animated hover layer */}
+  <span className="absolute inset-0 bg-[#C8221A]
+  scale-x-0 group-hover:scale-x-100
+  origin-left transition-transform duration-300"></span>
+
+  {/* text */}
+  <span className="relative z-10 text-[#C8221A]
+  group-hover:text-white transition-colors duration-300">
+    Join Now →
+  </span>
+
+</a>
             </div>
           </Reveal>
         </div>

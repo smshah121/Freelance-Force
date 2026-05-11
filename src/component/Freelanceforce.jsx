@@ -222,22 +222,32 @@ const FreelanceForce = () => {
     <div className="flex flex-col sm:flex-row gap-4 mt-8 mb-20">
 
       {/* PRIMARY BUTTON */}
-      <button 
-      onClick={()=> window.location = "mailto:iufreelancesociety@gmail.com"}
-      className="group bg-white text-[#C8221A]
-        px-6 py-3
-        uppercase tracking-[0.2em]
-        font-semibold text-sm sm:text-base
-        flex items-center justify-center gap-2
-        rounded-none border border-white">
+      <button
+  onClick={() => (window.location = "mailto:iufreelancesociety@gmail.com")}
+  className="group relative overflow-hidden bg-white text-[#C8221A]
+  px-7 py-3 sm:px-8 sm:py-4
+  uppercase tracking-[0.25em]
+  font-semibold text-sm sm:text-base
+  flex items-center justify-center gap-3
+  border border-white
+  transition-all duration-300"
+>
 
-        Start a Project
+  {/* hover background effect */}
+  <span className="absolute inset-0 bg-[#C8221A] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 z-0"></span>
 
-        <ArrowUpRight
-          size={18}
-          className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-        />
-      </button>
+  {/* text */}
+  <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+    Start a Project
+  </span>
+
+  {/* icon */}
+  <ArrowUpRight
+    size={18}
+    className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 group-hover:text-white"
+  />
+
+</button>
 
       {/* SECONDARY BUTTON */}
       {/* <button className="border border-white/30
@@ -628,22 +638,29 @@ AI solutions powered by Machine Learning and Data Science — including predicti
 
     {/* BUTTON */}
     <div className="mt-16">
-      <button
-      onClick={()=> window.location = "mailto:iufreelancesociety@gmail.com"}
-        className="group bg-[#C8221A]
-        hover:bg-[#d62b21]
-        transition-all duration-300
-        px-10 py-5 rounded-full
-        uppercase font-semibold tracking-wide
-        text-lg flex items-center gap-3"
-      >
-        Get in Touch
+<button
+  onClick={() => (window.location = "mailto:iufreelancesociety@gmail.com")}
+  className="group relative overflow-hidden bg-[#C8221A]
+  px-10 py-5 rounded-full
+  uppercase font-semibold tracking-wide
+  text-lg flex items-center gap-3
+  transition-all duration-300 border border-transparent hover:border-white/20"
+>
 
-        <ArrowUpRight
-          size={20}
-          className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-        />
-      </button>
+  {/* hover fill */}
+  <span className="absolute inset-0 bg-white scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+
+  {/* text */}
+  <span className="relative z-10 text-white group-hover:text-[#C8221A] transition-colors duration-300">
+    Get in Touch
+  </span>
+
+  {/* icon */}
+  <ArrowUpRight
+    size={20}
+    className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition group-hover:text-[#C8221A]"
+  />
+</button>
     </div>
 
   </div>
@@ -674,20 +691,44 @@ AI solutions powered by Machine Learning and Data Science — including predicti
 
     {/* BUTTON */}
     <div className="mt-16">
-      <button
-        className="group bg-white text-[#C8221A]
-        transition-all duration-300
-        px-10 py-5 rounded-full
-        uppercase font-semibold tracking-wide
-        text-lg flex items-center gap-3"
-      >
-        Apply Now
+    
+      
+       <a
+  href="https://chat.whatsapp.com/Ly36sMDsE5934DLkQkUhDT"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group relative overflow-hidden inline-flex
+  items-center gap-3
+  px-10 py-5 rounded-full
+  uppercase font-semibold tracking-wide
+  text-lg border border-white"
+>
 
-        <ArrowUpRight
-          size={20}
-          className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-        />
-      </button>
+  {/* background */}
+  <span className="absolute inset-0 bg-white"></span>
+
+  {/* hover layer */}
+  <span className="absolute inset-0 bg-[#C8221A] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
+
+  {/* text */}
+  <span className="relative z-10 text-[#C8221A] group-hover:text-white transition-colors duration-300">
+    Apply Now
+  </span>
+
+  {/* icon */}
+  <ArrowUpRight
+    size={20}
+    className="relative z-10 text-[#C8221A]
+    group-hover:text-white
+    group-hover:translate-x-1
+    group-hover:-translate-y-1
+    transition-all duration-300"
+  />
+</a>
+        
+
+        
+  
     </div>
 
   </div>
