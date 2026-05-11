@@ -405,12 +405,11 @@ const FreelanceForce = () => {
           </p>
 
           <h3 className="font-['Bebas_Neue'] text-5xl sm:text-6xl text-white leading-[0.9] mt-8">
-            AI · ML & <br /> DATA SCIENCE
+            ARTIFICIAL <br /> INTELLIGENCE
           </h3>
 
           <p className="text-gray-400 mt-8 text-base leading-relaxed">
-            We design intelligent systems using Machine Learning and Data Science —
-            from prediction models to analytics engines and AI-driven automation tools.
+AI solutions powered by Machine Learning and Data Science — including prediction systems, analytics engines, and intelligent applications.
           </p>
 
           <div className="mt-10 border-l-2 border-[#C8221A] pl-5">
