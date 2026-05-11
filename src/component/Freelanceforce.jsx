@@ -97,6 +97,7 @@ const FreelanceForce = () => {
 
 
         <button
+        onClick={()=> window.location = "mailto:iufreelancesociety@gmail.com"}
           className="border border-white/20
           backdrop-blur-xl bg-white/10
           hover:bg-white hover:text-[#C8221A]
@@ -239,7 +240,7 @@ const FreelanceForce = () => {
       </button>
 
       {/* SECONDARY BUTTON */}
-      <button className="border border-white/30
+      {/* <button className="border border-white/30
         text-white
         px-6 py-3
         uppercase tracking-[0.2em]
@@ -249,7 +250,7 @@ const FreelanceForce = () => {
 
         Explore Portfolio
 
-      </button>
+      </button> */}
 
     </div>
 
@@ -299,199 +300,304 @@ const FreelanceForce = () => {
 
       {/* ================= SERVICES ================= */}
      {/* ================= SERVICES ================= */}
-<section id="service" className="bg-black py-24 px-5 sm:px-8">
-
+<section id="service" className="bg-black py-28 px-5 sm:px-8 overflow-hidden">
   <div className="max-w-[1400px] mx-auto">
 
-    {/* HEADING */}
-    <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-6 mb-14">
+    {/* HEADER */}
+    <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-20">
 
-      <h2 className="font-['Bebas_Neue'] text-5xl sm:text-7xl text-white">
-        SERVICES
-      </h2>
+      <div>
+        <p className="text-[#C8221A] uppercase tracking-[0.3em] text-xs mb-4">
+          What We Deliver
+        </p>
 
-      <p className="text-gray-500 max-w-md text-lg">
-        We create high-quality digital experiences through design and development.
+        <h2 className="font-['Bebas_Neue'] text-6xl sm:text-7xl lg:text-8xl text-white leading-[0.85]">
+          SERVICES
+        </h2>
+      </div>
+
+      <p className="text-gray-500 max-w-md text-lg leading-relaxed">
+        We don’t just build projects — we design systems, products, and digital
+        experiences that scale startups and real businesses.
       </p>
 
     </div>
 
-    {/* TWO CARDS */}
-    <div className="grid md:grid-cols-2 gap-6">
+    {/* GRID */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-      {/* WEB DEVELOPMENT */}
+      {/* ================= SOFTWARE ================= */}
       <motion.div
-        whileHover={{ y: -10 }}
-        transition={{ duration: 0.3 }}
-        className="relative overflow-hidden bg-[#111]
-        border border-white/10
-        rounded-[32px]
-        p-8 sm:p-12
-        min-h-[420px]
-        flex flex-col justify-between
-        hover:border-[#C8221A]/40
-        transition-all duration-300"
+        whileHover={{ y: -12, scale: 1.01 }}
+        transition={{ duration: 0.35 }}
+        className="relative overflow-hidden lg:col-span-2 min-h-[540px]
+        rounded-[40px] border border-white/10 bg-[#0f0f0f]
+        p-8 sm:p-12 flex flex-col justify-between group"
       >
 
-        {/* GLOW */}
-        <div className="absolute top-0 right-0 w-[220px] h-[220px] bg-[#C8221A]/20 blur-[100px]"></div>
+        <span className="absolute top-6 right-10 font-['Bebas_Neue']
+        text-[160px] text-white/[0.03] leading-none">
+          01
+        </span>
 
-        {/* CONTENT */}
+        {/* subtle gradient depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
+
         <div className="relative z-10">
 
-          <p className="uppercase tracking-[0.2em] text-[#C8221A] text-sm">
-            01 — Development
+          <p className="uppercase tracking-[0.3em] text-[#C8221A] text-xs">
+            Full Stack Engineering
           </p>
 
-          <h3 className="font-['Bebas_Neue']
-          text-5xl sm:text-6xl
-          leading-[0.9]
-          mt-8 text-white">
-            WEB <br /> DEVELOPMENT
+          <h3 className="font-['Bebas_Neue'] text-6xl sm:text-7xl text-white leading-[0.9] mt-8">
+            SOFTWARE <br /> DEVELOPMENT
           </h3>
 
-          <p className="text-gray-400 mt-8 text-base sm:text-lg leading-relaxed max-w-[500px]">
-            Custom-built websites and scalable web applications designed
-            for performance, speed, and modern user experiences.
+          <p className="text-gray-400 mt-8 text-lg leading-relaxed max-w-[700px]">
+            We build production-ready web applications using a complete SDLC approach —
+            from architecture design to deployment. Focused on performance, scalability,
+            and real-world business impact.
           </p>
 
+          {/* OUTCOME STRIP */}
+          <div className="mt-10 border-l-2 border-[#C8221A] pl-5">
+            <p className="text-white/60 text-sm italic">
+              “From idea → product → scalable system used by real users.”
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-10">
+            {["MERN", "NestJS", "PostgreSQL", "SDLC", "APIs", "System Design"].map((item) => (
+              <span
+                key={item}
+                className="text-[10px] uppercase tracking-[0.25em]
+                text-white/60 border border-white/10
+                px-4 py-2 rounded-full hover:border-[#C8221A]/40 transition"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
         </div>
-
-        {/* BUTTON */}
-        <div className="relative z-10 mt-12">
-
-          {/* <button
-            className="group flex items-center gap-3
-            uppercase tracking-wide
-            text-white/80 hover:text-white
-            transition"
-          >
-            Explore Service
-
-            <ArrowUpRight
-              size={18}
-              className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-            />
-          </button> */}
-
-        </div>
-
       </motion.div>
 
-      {/* GRAPHIC DESIGN */}
+      {/* ================= AI ================= */}
       <motion.div
-        whileHover={{ y: -10 }}
-        transition={{ duration: 0.3 }}
-        className="relative overflow-hidden bg-[#111]
-        border border-white/10
-        rounded-[32px]
-        p-8 sm:p-12
-        min-h-[420px]
-        flex flex-col justify-between
-        hover:border-[#C8221A]/40
-        transition-all duration-300"
+        whileHover={{ y: -12, scale: 1.01 }}
+        transition={{ duration: 0.35 }}
+        className="relative overflow-hidden min-h-[540px]
+        rounded-[40px] border border-white/10 bg-[#0f0f0f]
+        p-8 sm:p-10 flex flex-col justify-between group"
       >
 
-        {/* GLOW */}
-        <div className="absolute bottom-0 left-0 w-[220px] h-[220px] bg-red-500/10 blur-[100px]"></div>
+        <span className="absolute top-6 right-8 font-['Bebas_Neue']
+        text-[140px] text-white/[0.03] leading-none">
+          02
+        </span>
 
-        {/* CONTENT */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#C8221A]/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
+
         <div className="relative z-10">
 
-          <p className="uppercase tracking-[0.2em] text-[#C8221A] text-sm">
-            02 — Design
+          <p className="uppercase tracking-[0.3em] text-[#C8221A] text-xs">
+            Intelligence Systems
           </p>
 
-          <h3 className="font-['Bebas_Neue']
-          text-5xl sm:text-6xl
-          leading-[0.9]
-          mt-8 text-white">
-            GRAPHIC <br /> DESIGN
+          <h3 className="font-['Bebas_Neue'] text-5xl sm:text-6xl text-white leading-[0.9] mt-8">
+            AI · ML & <br /> DATA SCIENCE
           </h3>
 
-          <p className="text-gray-400 mt-8 text-base sm:text-lg leading-relaxed max-w-[500px]">
-            Brand identities, social media creatives, UI visuals,
-            and impactful designs that communicate professionally.
+          <p className="text-gray-400 mt-8 text-base leading-relaxed">
+            We design intelligent systems using Machine Learning and Data Science —
+            from prediction models to analytics engines and AI-driven automation tools.
           </p>
 
+          <div className="mt-10 border-l-2 border-[#C8221A] pl-5">
+            <p className="text-white/60 text-sm italic">
+              “Turning raw data into smart decisions.”
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-10">
+            {["Python", "ML Models", "Data Science", "AI Systems"].map((item) => (
+              <span
+                key={item}
+                className="text-[10px] uppercase tracking-[0.25em]
+                text-white/60 border border-white/10
+                px-4 py-2 rounded-full hover:border-[#C8221A]/40 transition"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+
         </div>
-
-        {/* BUTTON */}
-        <div className="relative z-10 mt-12">
-
-          {/* <button
-            className="group flex items-center gap-3
-            uppercase tracking-wide
-            text-white/80 hover:text-white
-            transition"
-          >
-            Explore Service
-
-            <ArrowUpRight
-              size={18}
-              className="group-hover:translate-x-1 group-hover:-translate-y-1 transition"
-            />
-          </button> */}
-
-        </div>
-
       </motion.div>
+
+      {/* ================= DESIGN ================= */}
+      <motion.div
+        whileHover={{ y: -12, scale: 1.01 }}
+        transition={{ duration: 0.35 }}
+        className="relative overflow-hidden lg:col-span-3 min-h-[360px]
+        rounded-[40px] border border-white/10 bg-[#0f0f0f]
+        p-8 sm:p-12 group"
+      >
+
+        <span className="absolute top-6 right-10 font-['Bebas_Neue']
+        text-[160px] text-white/[0.03] leading-none">
+          03
+        </span>
+
+        <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+
+          <div>
+            <p className="uppercase tracking-[0.3em] text-[#C8221A] text-xs">
+              Creative Experience
+            </p>
+
+            <h3 className="font-['Bebas_Neue'] text-6xl sm:text-7xl text-white leading-[0.9] mt-8">
+              GRAPHIC <br /> DESIGN
+            </h3>
+
+            <p className="text-white/50 mt-6 italic">
+              “Design that doesn’t just look good — it communicates.”
+            </p>
+          </div>
+
+          <div>
+
+            <p className="text-gray-400 text-lg leading-relaxed">
+              We craft visual identities, UI systems, and brand experiences that help
+              businesses stand out with clarity, emotion, and modern aesthetics.
+            </p>
+
+            <div className="flex flex-wrap gap-3 mt-10">
+              {["Branding", "UI/UX", "Figma", "Creative Direction"].map((item) => (
+                <span
+                  key={item}
+                  className="text-[10px] uppercase tracking-[0.25em]
+                  text-white/60 border border-white/10
+                  px-4 py-2 rounded-full hover:border-[#C8221A]/40 transition"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+      </motion.div>
+
+    </div>
+  </div>
+</section>
+      {/* ================= WHY US ================= */}
+     <section className="relative bg-white text-black py-28 px-5 sm:px-8 overflow-hidden">
+
+  {/* subtle background texture */}
+  <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(circle_at_1px_1px,#000_1px,transparent_0)] bg-[size:24px_24px]" />
+
+  <div className="max-w-[1400px] mx-auto relative z-10">
+
+    {/* TOP AREA */}
+    <div className="flex flex-col lg:flex-row justify-between gap-12 mb-20">
+
+      <div>
+        <p className="text-[#C8221A] uppercase tracking-[0.25em] text-xs mb-4">
+          Why Choose Freelance Force
+        </p>
+
+        <h2 className="font-['Bebas_Neue'] leading-[0.85]
+        text-6xl sm:text-7xl lg:text-8xl">
+          WHY <br />
+          <span className="text-[#C8221A]">WORK</span> <br />
+          WITH US
+        </h2>
+      </div>
+
+      <p className="text-gray-500 max-w-md lg:text-right text-lg leading-relaxed">
+        Built for ambitious students, startups, and creators who want
+        real-world experience, not just academic theory.
+      </p>
+
+    </div>
+
+    {/* FEATURE LIST */}
+    <div className="space-y-6">
+
+      {[
+        {
+          num: "01",
+          title: "We operate like a real digital agency",
+          desc: "Structured workflows, client-level execution, and production-ready deliverables."
+        },
+        {
+          num: "02",
+          title: "Mentored by industry professionals",
+          desc: "Learn directly from developers, designers, and founders working in the field."
+        },
+        {
+          num: "03",
+          title: "Portfolio-first learning approach",
+          desc: "Everything you build contributes to your real-world portfolio and career growth."
+        },
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: i * 0.1 }}
+          className="group relative border-t border-gray-200 pt-8 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+        >
+
+          {/* LEFT NUMBER */}
+          <div className="flex items-start gap-6">
+
+            <span className="text-[#C8221A] font-['Bebas_Neue'] text-3xl md:text-4xl leading-none">
+              {item.num}
+            </span>
+
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-semibold leading-snug group-hover:translate-x-1 transition">
+                {item.title}
+              </h3>
+
+              <p className="text-gray-500 text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+
+          </div>
+
+          {/* RIGHT ARROW INDICATOR */}
+          <div className="text-black/20 group-hover:text-[#C8221A] transition text-2xl hidden md:block">
+            →
+          </div>
+
+        </motion.div>
+      ))}
+
+    </div>
+
+    {/* BOTTOM HIGHLIGHT STRIP */}
+    <div className="mt-20 border border-black/10 rounded-2xl p-8 sm:p-12 bg-white shadow-sm">
+
+      <p className="text-sm uppercase tracking-[0.25em] text-gray-400 mb-4">
+        Our Philosophy
+      </p>
+
+      <h3 className="text-3xl sm:text-4xl font-semibold leading-snug">
+        We don’t just teach skills — <br />
+        we build real-world experience.
+      </h3>
 
     </div>
 
   </div>
-
 </section>
-
-      {/* ================= WHY US ================= */}
-      <section className="bg-white text-black py-24 px-5 sm:px-8">
-
-        <div className="max-w-[1400px] mx-auto">
-
-          <div className="flex flex-col lg:flex-row justify-between gap-10 mb-16">
-
-            <h2 className="font-['Bebas_Neue'] leading-[0.9]
-            text-5xl sm:text-7xl lg:text-8xl">
-              WHY <br />
-              <span className="text-[#C8221A]">WORK</span> <br />
-              WITH US
-            </h2>
-
-            <p className="text-gray-500 max-w-sm lg:text-right text-lg">
-              Built for ambitious students, startups, and creators.
-            </p>
-
-          </div>
-
-          <div className="space-y-8">
-
-            {[
-              "We operate like a real agency",
-              "Mentored by industry professionals",
-              "Focused on portfolio-building and legacy",
-            ].map((title, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="border-t border-gray-200 pt-6 flex flex-col md:flex-row md:justify-between gap-3"
-              >
-                <p className="text-[#C8221A] text-lg">
-                  0{i + 1}
-                </p>
-
-                <h3 className="text-2xl sm:text-3xl font-medium">
-                  {title}
-                </h3>
-              </motion.div>
-            ))}
-
-          </div>
-
-        </div>
-      </section>
 
       {/* ================= CTA SECTION ================= */}
       {/* ================= CTA SECTION ================= */}
