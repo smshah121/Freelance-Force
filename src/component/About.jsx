@@ -176,135 +176,466 @@ const About = () => {
           CH 1 — OUR STORY (HERO)
       ════════════════════════════════════════════ */}
       <section
-        id="intro"
-        className="relative min-h-screen flex flex-col justify-end pb-24 pt-36 px-8 md:px-20 overflow-hidden"
+  id="intro"
+  className="relative min-h-screen flex flex-col justify-end pb-24 pt-36 px-8 md:px-20 overflow-hidden bg-black"
+>
+
+  {/* NOISE TEXTURE */}
+  <div
+    className="
+      absolute inset-0
+      opacity-[0.03]
+      mix-blend-screen
+      pointer-events-none
+    "
+    style={{
+      backgroundImage:
+        "url('https://grainy-gradients.vercel.app/noise.svg')",
+    }}
+  />
+
+  {/* BACKGROUND TEXT */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+    <motion.span
+      animate={{
+        scale: [1, 1.03, 1],
+        opacity: [0.02, 0.03, 0.02],
+      }}
+      transition={{
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="font-['Bebas_Neue'] text-[32vw] text-white/[0.022] leading-none"
+    >
+      ABOUT
+    </motion.span>
+  </div>
+
+  {/* RED SIDE LINE */}
+  <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#C8221A]" />
+
+  {/* GLOW LINE */}
+  <div
+    className="
+      absolute left-0 top-0 bottom-0
+      w-[12px]
+      bg-[#C8221A]/20
+      blur-xl
+    "
+  />
+
+  {/* CENTER GLOW */}
+  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+    <div
+      className="
+        w-[700px] h-[700px]
+        rounded-full
+        bg-[#C8221A]/10
+        blur-3xl
+        animate-pulse
+      "
+    />
+  </div>
+
+  {/* FLOATING ORB */}
+  <motion.div
+    animate={{
+      y: [0, -25, 0],
+      x: [0, 10, 0],
+    }}
+    transition={{
+      duration: 8,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+    className="
+      absolute
+      top-[20%]
+      right-[10%]
+      w-40 h-40
+      rounded-full
+      bg-[#C8221A]/20
+      blur-3xl
+      pointer-events-none
+    "
+  />
+
+  {/* FLOATING PARTICLES */}
+  {[...Array(8)].map((_, i) => (
+    <motion.div
+      key={i}
+      animate={{
+        y: [0, -30, 0],
+        opacity: [0.2, 0.6, 0.2],
+      }}
+      transition={{
+        duration: 4 + i,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+      className="absolute w-1 h-1 bg-[#C8221A] rounded-full"
+      style={{
+        top: `${20 + i * 8}%`,
+        left: `${10 + i * 10}%`,
+      }}
+    />
+  ))}
+
+  {/* CONTENT */}
+  <div className="relative z-10 max-w-[1300px] mx-auto w-full">
+
+    <motion.div
+      initial="hidden"
+      animate="show"
+      variants={stagger}
+    >
+
+      {/* SMALL TAGLINE */}
+      <motion.p
+        variants={fadeUp}
+        className="
+          text-white/30
+          uppercase
+          tracking-[0.35em]
+          text-[10px]
+          mb-8
+        "
       >
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <span className="font-['Bebas_Neue'] text-[32vw] text-white/[0.022] leading-none">ABOUT</span>
+        Built by students who chose execution over excuses.
+      </motion.p>
+
+      {/* MAIN HEADING */}
+      <motion.h1
+        variants={fadeUp}
+        className="
+          font-['Bebas_Neue']
+          text-8xl md:text-9xl
+          leading-[0.85]
+          mb-12
+        "
+      >
+        OUR<br />
+        <span className="text-[#C8221A]">
+          STORY.
+        </span>
+      </motion.h1>
+
+      {/* CONTENT GRID */}
+      <motion.div
+        variants={fadeUp}
+        className="
+          grid md:grid-cols-[1fr_1px_1fr]
+          gap-10
+          items-start
+        "
+      >
+
+        {/* STORY TEXT */}
+        <div>
+          <p className="text-white/50 text-lg leading-relaxed">
+            Freelance Force was launched in early 2025 inside a university
+            classroom in Karachi by a group of developers, designers, and
+            builders who chose to focus on real-world execution instead of
+            just academic theory.
+
+            <br /><br />
+
+            Founded with a vision to empower students through freelancing
+            and digital skills, the society independently organized its
+            initial bootcamp at Iqra University, emphasizing practical
+            learning and hands-on experience.
+
+            <br /><br />
+
+            In under a year, we expanded into two full bootcamp cycles,
+            hosted city-wide events, and built a reputation for shipping
+            real outcomes rather than just presentations.
+          </p>
         </div>
-        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#C8221A]" />
 
-        <div className="relative z-10 max-w-[1300px] mx-auto w-full">
-          <motion.div initial="hidden" animate="show" variants={stagger}>
+        {/* DIVIDER */}
+        <div className="hidden md:block w-[1px] bg-white/[0.07] self-stretch" />
 
-           
+        {/* STATS */}
+        <div className="grid grid-cols-2 gap-px bg-white/[0.05] border border-white/[0.05]">
 
-            <motion.h1 variants={fadeUp} className="font-['Bebas_Neue'] text-8xl md:text-9xl leading-[0.85] mb-12">
-              OUR<br /><span className="text-[#C8221A]">STORY.</span>
-            </motion.h1>
+          {[
+            { val: "2", lbl: "Bootcamps Completed" },
+            { val: "4", lbl: "Courses Offered" },
+            { val: "∞", lbl: "Student Impact" },
+            { val: "2025", lbl: "Year Founded" },
+          ].map(({ val, lbl }) => (
 
-            <motion.div variants={fadeUp} className="grid md:grid-cols-[1fr_1px_1fr] gap-10 items-start">
-              <p className="text-white/50 text-lg leading-relaxed">
-                  <p className="text-white/50 text-lg leading-relaxed">
-                Freelance Force was launched in early 2025 inside a university classroom in Karachi by a group of developers, designers, and builders who chose to focus on real-world execution instead of just academic theory. Founded with a vision to empower students through freelancing and digital skills, the society independently organized its initial bootcamp at Iqra University, emphasizing practical learning and hands-on experience. In under a year, we expanded into two full bootcamp cycles, hosted city-wide events, and built a reputation for shipping real outcomes rather than just presentations.
-              </p>
-              </p>
-              <div className="hidden md:block w-[1px] bg-white/[0.07] self-stretch" />
-              <div className="grid grid-cols-2 gap-px bg-white/[0.05] border border-white/[0.05]">
-                {[
-                  { val: "2",    lbl: "Bootcamps Completed" },
-                  { val: "4",    lbl: "Courses Offered" },
-                   { val: "∞", lbl: "Student Impact" },
-                  { val: "2025", lbl: "Year Founded" },
-                ].map(({ val, lbl }) => (
-                  <div key={lbl} className="bg-black px-6 py-7 text-center">
-                    <p className="font-['Bebas_Neue'] text-5xl text-white">{val}</p>
-                    <p className="text-white/25 text-[9px] uppercase tracking-[0.2em] mt-1">{lbl}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Scroll cue */}
-          <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.4 }}
-            className="mt-16 flex items-center gap-4"
-          >
             <motion.div
-              animate={{ y: [0, 8, 0] }} transition={{ repeat: Infinity, duration: 1.8 }}
-              className="w-[1px] h-12 bg-white/15"
-            />
-            <span className="text-white/20 text-[9px] uppercase tracking-[0.3em]">Scroll to explore</span>
-          </motion.div>
-        </div>
-      </section>
+              key={lbl}
+              whileHover={{ y: -4 }}
+              className="
+                bg-black
+                px-6 py-7
+                text-center
+                hover:bg-[#111]
+                transition-all duration-500
+                group
+              "
+            >
 
+              <p
+                className="
+                  font-['Bebas_Neue']
+                  text-5xl
+                  text-white
+                  group-hover:text-[#C8221A]
+                  transition-colors duration-500
+                "
+              >
+                {val}
+              </p>
+
+              <p
+                className="
+                  text-white/25
+                  text-[9px]
+                  uppercase
+                  tracking-[0.2em]
+                  mt-1
+                "
+              >
+                {lbl}
+              </p>
+
+            </motion.div>
+
+          ))}
+        </div>
+      </motion.div>
+    </motion.div>
+
+    {/* SCROLL INDICATOR */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.4 }}
+      className="mt-16 flex items-center gap-4"
+    >
+
+      <motion.div
+        animate={{ y: [0, 8, 0] }}
+        transition={{
+          repeat: Infinity,
+          duration: 1.8,
+        }}
+        className="w-[1px] h-12 bg-white/15"
+      />
+
+      <span
+        className="
+          text-white/20
+          text-[9px]
+          uppercase
+          tracking-[0.3em]
+        "
+      >
+        Scroll to explore
+      </span>
+
+    </motion.div>
+  </div>
+</section>
 
       {/* ════════════════════════════════════════════
           CH 2 — THE BEGINNING
       ════════════════════════════════════════════ */}
       <section id="beginning" className="min-h-screen flex items-stretch relative overflow-hidden">
-        <div className="grid md:grid-cols-2 w-full">
+  <div className="grid md:grid-cols-2 w-full">
 
-          {/* Left red panel */}
-          <div className="bg-[#C8221A] flex flex-col justify-between p-12 md:p-20 min-h-[55vh] relative overflow-hidden">
-            <Reveal variants={fadeLeft}>
-              <p className="uppercase text-white/40 tracking-[0.3em] text-[10px]">Chapter 01</p>
-            </Reveal>
-            <div className="relative z-10">
-              <Reveal variants={fadeLeft} delay={0.1}>
-                <h2 className="font-['Bebas_Neue'] text-[13vw] md:text-[8vw] leading-[0.85] text-white">
-                  THE<br />BEGIN-<br />NING.
-                </h2>
-              </Reveal>
-            </div>
-            <div className="font-['Bebas_Neue'] text-[25vw] md:text-[16vw] leading-none text-red-900/25 absolute -bottom-6 -right-4 pointer-events-none select-none">01</div>
-            <Reveal variants={fadeLeft} delay={0.2}>
-              <div className="w-12 h-[1px] bg-white/30" />
-            </Reveal>
-          </div>
+    {/* Left red panel */}
+    <div className="bg-[#C8221A] flex flex-col justify-between p-12 md:p-20 min-h-[55vh] relative overflow-hidden">
 
-          {/* Right content */}
-          <div className="bg-[#0c0c0c] flex flex-col justify-center p-12 md:p-20">
-            <Reveal variants={fadeRight}>
-              <p className="text-white/25 text-[10px] uppercase tracking-[0.3em] mb-8">Early 2025, Karachi</p>
-            </Reveal>
-            <Reveal variants={fadeRight} delay={0.1}>
-              <p className="text-white/70 text-xl leading-relaxed mb-8">
-                Freelance Force was founded in early 2025 by students at IU who were done
-                graduating with theory and no portfolio. The founding idea was simple:
-                operate like a real studio, inside a university.
-              </p>
-            </Reveal>
-            <Reveal variants={fadeRight} delay={0.15}>
-              <p className="text-white/35 leading-relaxed mb-12">
-                What started as a handful of people taking on small projects quickly grew
-                into a structured collective — with roles, deadlines, and deliverables that
-                matched anything in the industry.
-              </p>
-            </Reveal>
+      {/* animated background glow */}
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.15, 0.25, 0.15],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute -top-32 -left-32 w-[420px] h-[420px]
+        bg-white/10 blur-[120px] rounded-full"
+      />
 
-            {/* Timeline */}
-            <Reveal variants={fadeRight} delay={0.2}>
-              <div className="border-t border-white/[0.06]">
-                {timeline.map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.08, duration: 0.55 }}
-                    className="flex gap-5 border-b border-white/[0.06] py-4 items-start group"
+      <Reveal variants={fadeLeft}>
+        <p className="uppercase text-white/40 tracking-[0.3em] text-[10px]">
+          Chapter 01
+        </p>
+      </Reveal>
+
+      <div className="relative z-10">
+        <Reveal variants={fadeLeft} delay={0.1}>
+          <h2 className="font-['Bebas_Neue'] text-[13vw] md:text-[8vw] leading-[0.85] text-white">
+            THE<br />BEGIN-<br />NING.
+          </h2>
+        </Reveal>
+      </div>
+
+      {/* huge number */}
+      <div className="font-['Bebas_Neue'] text-[25vw] md:text-[16vw] leading-none text-red-900/25 absolute -bottom-6 -right-4 pointer-events-none select-none">
+        01
+      </div>
+
+      <Reveal variants={fadeLeft} delay={0.2}>
+        <div className="w-12 h-[1px] bg-white/30" />
+      </Reveal>
+    </div>
+
+    {/* Right content */}
+    <div className="bg-[#0c0c0c] flex flex-col justify-center p-12 md:p-20 relative">
+
+      {/* background glow */}
+      <motion.div
+        animate={{
+          opacity: [0.08, 0.16, 0.08],
+          scale: [1, 1.08, 1],
+        }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-20 right-10 w-[300px] h-[300px]
+        bg-[#C8221A]/20 blur-[120px] rounded-full"
+      />
+
+      <Reveal variants={fadeRight}>
+        <p className="text-white/25 text-[10px] uppercase tracking-[0.3em] mb-8">
+          Early 2025, Karachi
+        </p>
+      </Reveal>
+
+      <Reveal variants={fadeRight} delay={0.1}>
+        <p className="text-white/70 text-xl leading-relaxed mb-8">
+          Freelance Force was founded in early 2025 by students at IU who were done
+          graduating with theory and no portfolio. The founding idea was simple:
+          operate like a real studio, inside a university.
+        </p>
+      </Reveal>
+
+      <Reveal variants={fadeRight} delay={0.15}>
+        <p className="text-white/35 leading-relaxed mb-14">
+          What started as a handful of people taking on small projects quickly grew
+          into a structured collective — with roles, deadlines, and deliverables that
+          matched anything in the industry.
+        </p>
+      </Reveal>
+
+      {/* Timeline */}
+      <Reveal variants={fadeRight} delay={0.2}>
+        <div className="relative pl-10">
+
+          {/* vertical animated line */}
+          <motion.div
+            initial={{ height: 0 }}
+            whileInView={{ height: "100%" }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.4, ease: "easeOut" }}
+            className="absolute left-[5px] top-0 w-[1px]
+            bg-gradient-to-b from-[#C8221A] via-white/20 to-transparent"
+          />
+
+          {/* moving dot */}
+          <motion.div
+            animate={{
+              y: ["0%", "100%", "0%"],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute left-[0px] top-0 w-3 h-3 rounded-full
+            bg-[#C8221A] shadow-[0_0_20px_rgba(200,34,26,0.9)]"
+          />
+
+          <div className="space-y-2">
+            {timeline.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08, duration: 0.55 }}
+                className="
+                relative group
+                border border-white/[0.05]
+                bg-white/[0.02]
+                hover:bg-white/[0.04]
+                hover:border-[#C8221A]/30
+                transition-all duration-300
+                px-6 py-5
+                "
+              >
+
+                {/* hover glow */}
+                <div
+                  className="
+                  absolute inset-0 opacity-0 group-hover:opacity-100
+                  bg-[#C8221A]/5 blur-2xl transition-opacity duration-500
+                  pointer-events-none
+                  "
+                />
+
+                {/* dot */}
+                <span
+                  className="
+                  absolute -left-[34px] top-7
+                  w-3 h-3 rounded-full
+                  bg-[#C8221A]
+                  border-4 border-[#0c0c0c]
+                  group-hover:scale-125
+                  shadow-[0_0_18px_rgba(200,34,26,0.7)]
+                  transition-all duration-300
+                  "
+                />
+
+                <div className="relative z-10">
+                  <p className="text-white/25 text-[9px] uppercase tracking-[0.2em] mb-1">
+                    {item.when}
+                  </p>
+
+                  <p className="text-white text-sm font-medium">
+                    {item.milestone}
+                  </p>
+
+                  <p className="text-white/35 text-xs mt-1 leading-relaxed">
+                    {item.detail}
+                  </p>
+                </div>
+
+                {(item.when === "Summer 2026" ||
+                  item.when === "June 2026") && (
+                  <span
+                    className="
+                    absolute top-5 right-5
+                    text-[9px] uppercase tracking-widest
+                    text-[#C8221A]
+                    border border-[#C8221A]/30
+                    px-2 py-1
+                    "
                   >
-                    <span className="w-1.5 h-1.5 bg-[#C8221A] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform" />
-                    <div className="flex-1">
-                      <p className="text-white/25 text-[9px] uppercase tracking-[0.2em] mb-0.5">{item.when}</p>
-                      <p className="text-white text-sm font-medium">{item.milestone}</p>
-                      <p className="text-white/35 text-xs mt-0.5">{item.detail}</p>
-                    </div>
-                    {(item.when === "Summer 2026" || item.when === "June 2026") && (
-                      <span className="text-[9px] uppercase tracking-widest text-[#C8221A] border border-[#C8221A]/30 px-2 py-0.5 flex-shrink-0">
-                        Upcoming
-                      </span>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            </Reveal>
+                    Upcoming
+                  </span>
+                )}
+              </motion.div>
+            ))}
           </div>
         </div>
-      </section>
+      </Reveal>
+    </div>
+  </div>
+</section>
 
 
       {/* ════════════════════════════════════════════
@@ -1013,9 +1344,9 @@ const About = () => {
       <footer className="bg-black border-t border-white/[0.05] py-8 px-8">
         <div className="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
           <img src="/logo.png" alt="logo" className="h-12 brightness-0 invert" />
-          <p className="text-white/15 text-[10px] uppercase tracking-widest">
-            © {new Date().getFullYear()} · Est. Early 2025 · Karachi
-          </p>
+          <p className="text-white/20 text-[10px] uppercase tracking-[0.25em]">
+  Built by students. Driven by execution.
+</p>
           <Link to="/" className="text-white/25 text-[10px] uppercase tracking-widest hover:text-white/50 transition-colors">
             Back to Home
           </Link>
