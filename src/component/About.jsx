@@ -84,24 +84,52 @@ const partners = [
 ];
 
 /* ── Leadership 3-card grid data ── */
-const leadership = [
+const leadershipTimeline = [
   {
-    role: "Presidents",
-    desc: "Leading strategy, operations, and vision execution of Freelance Force.",
-    members: ["Syed Danish Khurram (President)","Hassan Mansoor (Vice President)", "Elhaam Ali (Ex-President)", "Moiz Ali Khan (Ex-Vice President)"],
-    icon: "◈",
+    era: "Founding Era",
+    period: "Early 2025",
+    
+    president: {
+      name: "Elhaam Ali",
+      role: "President",
+      image: "/elhaam_p.jpg",
+    },
+
+    vicePresident: {
+      name: "Syed Danish Khurram",
+      role: "Vice President",
+      image: "/image.png",
+    },
+
+    highlights: [
+      "Freelance Force Society Founded",
+      "Bootcamp Batch 1 Completed",
+      "Bootcamp Batch 2 Completed",
+      "IU Spectrum — Tekken 8 Gaming War Successfully Organised",
+    ],
   },
+
   {
-    role: "Patron",
-    desc: "Guiding with mentorship, academic experience, and institutional support.",
-    members: ["Asif Ali Shahmiri"],
-    icon: "✦",
-  },
-  {
-    role: "Core Team",
-    desc: "Developers, designers, and managers delivering real-world project work.",
-    members: ["Syed Momin Ali Shah", "Muhammad Farasat", "Syed Saad Akber", "Ausaf Ahmed"],
-    icon: "◱",
+    era: "Expansion Era",
+    period: "2025 - 2026",
+
+    president: {
+      name: "Syed Danish Khurram",
+      role: "President",
+      image: "/image.png",
+    },
+
+    vicePresident: {
+      name: "Hasan Mansoor",
+      role: "Vice President",
+      image: "/hasan_vp.jpg",
+    },
+
+    highlights: [
+      "Hosting Skillverse in June 2026 with AICIS, ACM & GDR Society",
+      "Bootcamp System Expanded",
+      "Industry Collaborations Increased",
+    ],
   },
 ];
 
@@ -1246,38 +1274,177 @@ const About = () => {
           </motion.div>
 
           {/* ── 3-card grid ── */}
-          <div className="mt-16 grid md:grid-cols-3 gap-px bg-white/[0.04] mb-6">
-            {leadership.map((team, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15, duration: 0.7 }}
-                className="bg-[#0c0c0c] p-10 flex flex-col justify-between min-h-[400px] group hover:bg-[#101010] transition-colors"
-              >
-                <div>
-                  <div className="text-4xl text-white/[0.07] mb-8 group-hover:text-[#C8221A]/20 transition-colors">
-                    {team.icon}
-                  </div>
-                  <p className="text-[#C8221A] uppercase tracking-[0.25em] text-[10px] mb-4">{team.role}</p>
-                  <p className="text-white/35 text-sm leading-relaxed">{team.desc}</p>
-                </div>
-                <div>
-                  <div className="w-8 h-[1px] bg-white/[0.08] mb-6 group-hover:w-16 group-hover:bg-[#C8221A]/40 transition-all duration-500" />
-                  <div className="space-y-2">
-                    {team.members.map((m) => (
-                      <p key={m} className="text-white font-medium text-sm">{m}</p>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+       <div className="mt-20 space-y-12 relative">
+
+  {/* CENTER LINE */}
+  <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/[0.06]" />
+
+  {leadershipTimeline.map((item, i) => (
+
+    <motion.div
+      key={i}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+      className={`relative flex flex-col md:flex-row items-center ${
+        i % 2 !== 0 ? "md:flex-row-reverse" : ""
+      }`}
+    >
+
+      {/* CONTENT SIDE */}
+      <div
+        className={`w-full md:w-1/2 ${
+          i % 2 === 0 ? "md:pr-10" : "md:pl-10"
+        }`}
+      >
+
+        <div
+          className="
+          bg-[#0c0c0c]
+          border border-white/[0.05]
+          p-6
+          hover:border-[#C8221A]/30
+          transition-all duration-500
+          "
+        >
+
+          {/* PERIOD */}
+          <p className="text-[#C8221A] text-[10px] uppercase tracking-[0.3em] mb-3">
+            {item.period}
+          </p>
+
+          {/* ERA */}
+          <h3 className="font-['Bebas_Neue'] text-5xl text-white leading-none mb-8">
+            {item.era}
+          </h3>
+
+          {/* PRESIDENT + VP */}
+          <div className="grid grid-cols-2 gap-4 mb-6">
+
+            {/* PRESIDENT */}
+            <div className="relative overflow-hidden border border-white/[0.06] group">
+
+              <img
+                src={item.president.image}
+                alt={item.president.name}
+                className="
+                w-full
+                h-[220px]
+                object-cover
+                grayscale
+                group-hover:grayscale-0
+                transition duration-500
+                "
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+
+              <div className="absolute bottom-0 p-4">
+
+                <p className="text-[#C8221A] text-[9px] uppercase tracking-widest">
+                  {item.president.role}
+                </p>
+
+                <p className="text-white font-semibold text-sm">
+                  {item.president.name}
+                </p>
+
+              </div>
+            </div>
+
+            {/* VICE PRESIDENT */}
+            <div className="relative overflow-hidden border border-white/[0.06] group">
+
+              <img
+                src={item.vicePresident.image}
+                alt={item.vicePresident.name}
+                className="
+                w-full
+                h-[220px]
+                object-cover
+                grayscale
+                group-hover:grayscale-0
+                transition duration-500
+                "
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+
+              <div className="absolute bottom-0 p-4">
+
+                <p className="text-[#C8221A] text-[9px] uppercase tracking-widest">
+                  {item.vicePresident.role}
+                </p>
+
+                <p className="text-white font-semibold text-sm">
+                  {item.vicePresident.name}
+                </p>
+
+              </div>
+            </div>
+
           </div>
+
+          {/* HIGHLIGHTS */}
+          <div className="space-y-3">
+
+            <p className="text-white/20 uppercase tracking-[0.25em] text-[9px]">
+              Achievements During Tenure
+            </p>
+
+            {item.highlights.map((h, idx) => (
+
+              <div
+                key={idx}
+                className="flex items-start gap-3 text-white/60 text-sm"
+              >
+
+                <span
+                  className="
+                  w-1.5 h-1.5
+                  rounded-full
+                  bg-[#C8221A]
+                  mt-2
+                  flex-shrink-0
+                  "
+                />
+
+                {h}
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* CENTER DOT */}
+      <div
+        className="
+        hidden md:block
+        absolute left-1/2 -translate-x-1/2
+        w-4 h-4 rounded-full
+        bg-[#C8221A]
+        shadow-[0_0_25px_rgba(200,34,26,0.9)]
+        "
+      />
+
+      {/* EMPTY SIDE */}
+      <div className="hidden md:block w-1/2" />
+
+    </motion.div>
+
+  ))}
+
+</div>
 
           {/* ── CTA ── */}
           <Reveal delay={0.3}>
-            <div className="bg-[#C8221A] p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="bg-[#C8221A] p-10 flex flex-col mt-20 md:flex-row items-center justify-between gap-6">
               <div>
                 <p className="font-['Bebas_Neue'] text-4xl md:text-5xl text-white leading-none mb-2">
                   READY TO JOIN THE MOVEMENT?
