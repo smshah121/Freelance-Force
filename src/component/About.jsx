@@ -60,7 +60,7 @@ const timeline = [
 
 /* ── Last Mile Tech courses ── */
 const courses = [
-  { name: "Full Stack",           desc: "End-to-end web development from frontend to backend APIs and databases.", icon: "⌨" },
+  { name: "Full Stack Development",           desc: "End-to-end web development from frontend to backend APIs and databases.", icon: "⌨" },
   { name: "Testing & Automation", desc: "QA fundamentals, automated test pipelines, and CI integration.",          icon: "◎" },
   { name: "DevOps",               desc: "Containers, cloud deployments, pipelines, and infrastructure as code.",   icon: "⬡" },
   { name: "AI",                   desc: "Practical AI integrations, model usage, and building intelligent apps.",  icon: "◈" },
@@ -165,7 +165,7 @@ const About = () => {
               src="/logo.png"
               alt="logo"
               onClick={() => navigate("/")}
-              className="h-[55px] md:h-[60px] brightness-0 invert"
+              className="h-[50px] md:h-[50px] brightness-0 invert"
             />
           </motion.div>
         </div>
