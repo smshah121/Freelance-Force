@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
+import { Infinity } from "lucide-react";
 
 /* ── Animation variants ── */
 const fadeUp = {
@@ -361,52 +362,43 @@ const About = () => {
         <div className="grid grid-cols-2 gap-px bg-white/[0.05] border border-white/[0.05]">
 
           {[
-            { val: "2", lbl: "Bootcamps Completed" },
-            { val: "4", lbl: "Courses Offered" },
-            { val: "∞", lbl: "Student Impact" },
-            { val: "2025", lbl: "Year Founded" },
-          ].map(({ val, lbl }) => (
+  { val: "2", lbl: "Bootcamps Completed" },
+  { val: "4", lbl: "Courses Offered" },
+  { val: <Infinity size={42} strokeWidth={2.5} />, lbl: "Student Impact" },
+  { val: "2025", lbl: "Year Founded" },
+].map(({ val, lbl }) => (
 
-            <motion.div
-              key={lbl}
-              whileHover={{ y: -4 }}
-              className="
-                bg-black
-                px-6 py-7
-                text-center
-                hover:bg-[#111]
-                transition-all duration-500
-                group
-              "
-            >
+  <motion.div
+    key={lbl}
+    whileHover={{ y: -4 }}
+    className="
+      bg-black
+      px-6 py-7
+      text-center
+      hover:bg-[#111]
+      transition-all duration-500
+      group
+    "
+  >
 
-              <p
-                className="
-                  font-['Bebas_Neue']
-                  text-5xl
-                  text-white
-                  group-hover:text-[#C8221A]
-                  transition-colors duration-500
-                "
-              >
-                {val}
-              </p>
+    {/* VALUE */}
+    <div className="flex justify-center items-center h-[60px] text-white">
+      {typeof val === "string" ? (
+        <p className="font-['Bebas_Neue'] text-5xl">
+          {val}
+        </p>
+      ) : (
+        val
+      )}
+    </div>
 
-              <p
-                className="
-                  text-white/25
-                  text-[9px]
-                  uppercase
-                  tracking-[0.2em]
-                  mt-1
-                "
-              >
-                {lbl}
-              </p>
+    {/* LABEL */}
+    <p className="text-white/25 text-[9px] uppercase tracking-[0.2em] mt-1">
+      {lbl}
+    </p>
 
-            </motion.div>
-
-          ))}
+  </motion.div>
+))}
         </div>
       </motion.div>
     </motion.div>

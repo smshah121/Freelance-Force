@@ -253,7 +253,7 @@ const FreelanceForce = () => {
 
   {/* TEXT */}
   <span className="relative z-10 group-hover:text-[#C8221A] transition-colors duration-300">
-    Explore Us
+    Explore Our Story
   </span>
 
 </Link>
