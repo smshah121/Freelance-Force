@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "/logo.png";
 import { FaLinkedin,FaInstagram,FaWhatsapp ,FaFacebook } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,6 +12,17 @@ import { Link } from "react-router-dom";
 
 const FreelanceForce = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 40);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   const items = [
     "Web Development",
@@ -36,7 +47,7 @@ const FreelanceForce = () => {
 
       {/* ================= NAVBAR ================= */}
     {/* ================= HERO + NAV WRAPPER ================= */}
-<section className="relative min-h-screen bg-[#C8221A] overflow-hidden flex flex-col">
+<section id="hero" className="relative min-h-screen bg-[#C8221A] overflow-hidden flex flex-col pt-[90px]">
 
   {/* GRID OVERLAY */}
   <div className="absolute inset-0 opacity-[0.06]">
@@ -47,7 +58,13 @@ const FreelanceForce = () => {
   <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
   {/* ================= NAVBAR ================= */}
-  <nav className="relative z-50 border-b border-white/10">
+  <nav
+  className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+    isScrolled
+      ? "bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-lg"
+      : "bg-transparent"
+  }`}
+>
 
     <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-5 flex items-center justify-between">
 
@@ -56,11 +73,14 @@ const FreelanceForce = () => {
         whileHover={{ scale: 1.05 }}
         className="cursor-pointer"
       >
-        <img
+        <a href="#hero">
+          <img
           src={logo}
           alt="logo"
           className="h-[55px] sm:h-[65px] brightness-0 invert"
         />
+        </a>
+        
       </motion.div>
 
       {/* DESKTOP MENU */}
