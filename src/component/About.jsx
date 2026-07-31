@@ -80,7 +80,7 @@ const partners = [
   { name: "AICIS",           full: "AI & Computer Intelligence Society" },
   { name: "ACM",             full: "Association for Computing Machinery" },
   { name: "GDR Society",     full: "Game Design & Robotics Society" },
-  { name: "Freelance Force", full: "Lead Organiser" },
+  { name: "Freelance Force", full: "Empowering Students to Lead in the Freelance Revolution" },
 ];
 
 /* ── Leadership 3-card grid data ── */
@@ -871,7 +871,7 @@ const About = () => {
                   SKILLVERSE.
                 </h3>
                 <span className="mb-2 bg-[#C8221A] text-white text-[9px] uppercase tracking-widest px-3 py-1.5 font-semibold">
-                  June 2026 · Upcoming
+                  June 2026 
                 </span>
               </div>
             </Reveal>
