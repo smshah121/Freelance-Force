@@ -721,22 +721,7 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Batch 3 strip */}
-          <Reveal delay={0.2}>
-            <div className="border border-zinc-200 bg-zinc-50 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-              <div>
-                <p className="text-[9px] uppercase tracking-[0.25em] text-[#C8221A] mb-2">Coming · Summer 2026</p>
-                <p className="font-['Bebas_Neue'] text-3xl text-black">Last Mile Tech — Batch 3</p>
-                <p className="text-zinc-400 text-sm mt-1">
-                  All four tracks · Full Stack · Testing & Automation · DevOps · AI · Applications opening soon
-                </p>
-              </div>
-              <button className="bg-[#C8221A] text-white px-8 py-3.5 text-[10px] uppercase tracking-widest font-semibold hover:bg-red-800 transition-colors flex-shrink-0">
-                Get Notified →
-              </button>
-            </div>
-          </Reveal>
+       
         </div>
       </section>
 
