@@ -640,20 +640,7 @@ const About = () => {
                   </p>
                 </div>
 
-                {(item.when === "Summer 2026" ||
-                  item.when === "June 2026") && (
-                  <span
-                    className="
-                    absolute top-5 right-5
-                    text-[9px] uppercase tracking-widest
-                    text-[#C8221A]
-                    border border-[#C8221A]/30
-                    px-2 py-1
-                    "
-                  >
-                    Upcoming
-                  </span>
-                )}
+               
               </motion.div>
             ))}
           </div>
