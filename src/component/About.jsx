@@ -56,7 +56,7 @@ const timeline = [
   { when: "Summer 2025", milestone: "Last Mile Tech — Batch 2",  detail: "DevOps added · expanded enrollment" },
   { when: "2025",        milestone: "IU Spectrum — Gaming War",  detail: "Tekken 8 · PS5 · w/ GDR Society · city-wide" },
   { when: "June 2026",   milestone: "Skillverse",               detail: "City-wide event w/ AICIS · ACM · GDR" },
-  { when: "Summer 2026", milestone: "Last Mile Tech — Batch 3",  detail: "Coming soon · applications opening" },
+  { when: "Summer 2026", milestone: "Last Mile Tech — Batch 3",  detail: "Coming soon" },
 ];
 
 /* ── Last Mile Tech courses ── */
